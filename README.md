@@ -778,275 +778,201 @@ Purpose: Monitors CPU usage per processor/core.
 
 mpstat
 
-14. 🧮 Memory
-free
-
+**14. 🧮 Memory**
+**free**
 Purpose: Displays RAM and swap memory usage.
 
-free
-
+**free**
 free -h
-
 Purpose: Displays memory information in human-readable format.
-
 free -h
 
-vmstat
-
+**vmstat**
 Monitors memory along with CPU and system performance.
-
 vmstat
 
-top
-
+**top**
 Monitors memory and CPU usage of running processes.
-
 top
 
-htop
-
+**htop**
 Interactive CPU, memory, and process monitoring.
-
 htop
 
-15. 💽 Disk / Storage
-df
 
+
+
+
+
+**15. 💽 Disk / Storage**
+**df**
 Purpose: Displays filesystem disk-space usage.
-
 df -h
-
 Remember: df → Filesystem disk usage
-du
 
+**du**
 Purpose: Shows how much disk space a file/directory uses.
-
 du -sh folder
-
 Remember: du → Directory/file usage
-lsblk
 
+**lsblk**
 Purpose: Lists disks and block devices.
-
 lsblk
 
-blkid
-
+**blkid**
 Purpose: Displays UUID and filesystem information for block devices.
-
 sudo blkid
 
-mount
-
+**mount**
 Purpose: Attaches a filesystem/device to a directory.
-
 sudo mount /dev/sdb1 /mnt
 
-umount
-
+**umount**
 Purpose: Unmounts a filesystem.
-
 sudo umount /mnt
 
-fdisk
-
+**fdisk**
 Purpose: Views/manages disk partitions.
-
 sudo fdisk -l
-
 ⚠️ Be careful when modifying partitions.
-parted
 
+**parted**
 Purpose: Creates/manages disk partitions.
-
 sudo parted -l
 
-16. ⚙️ Processes
-ps
 
+
+**16. ⚙️ Processes**
+**ps**
 Purpose: Displays currently running processes.
-
 ps
 
-ps -ef
-
+**ps -ef**
 Purpose: Displays all processes in detailed format.
-
 ps -ef
 
-ps aux
-
+**ps aux**
 Purpose: Displays detailed process information for all users.
-
 ps aux
 
-pgrep
-
+**pgrep**
 Purpose: Finds process IDs based on process name.
-
 pgrep nginx
 
-pidof
-
+**pidof**
 Purpose: Finds the PID of a running program.
-
 pidof nginx
 
-pstree
-
+**pstree**
 Purpose: Displays processes in a parent-child tree structure.
-
 pstree
 
-kill
-
+**kill**
 Purpose: Sends a signal to a process using its PID.
-
 kill 1234
-
-Force:
-
+**Force:**
 kill -9 1234
 
-killall
-
+**killall**
 Purpose: Kills matching processes by name.
-
 killall nginx
 
-pkill
-
+**pkill**
 Purpose: Sends signals to processes based on name/pattern.
-
 pkill nginx
 
-nice
-
+**nice**
 Purpose: Starts a process with a specific CPU scheduling priority.
-
 nice -n 10 ./script.sh
 
-renice
-
+**renice**
 Purpose: Changes the priority of an already-running process.
-
 renice 10 -p 1234
 
-17. 🔄 Jobs / Background Processes
-jobs
 
+
+
+**17. 🔄 Jobs / Background Processes**
+**jobs**
 Purpose: Displays background/stopped jobs in the current shell.
-
 jobs
 
-fg
-
+**fg**
 Full form: Foreground
-
 Purpose: Brings a background job to the foreground.
-
 fg %1
 
-bg
-
+**bg**
 Full form: Background
-
 Purpose: Continues a stopped job in the background.
-
 bg %1
 
-nohup
-
+**nohup**
 Purpose: Keeps a command running after terminal logout/closure.
-
 nohup ./app.sh &
 
-wait
-
+**wait**
 Purpose: Waits for background processes to complete.
-
 wait
 
-disown
-
+**disown**
 Purpose: Removes a job from the current shell's job table so it can continue after logout.
-
 disown %1
 
-18. ⚡ Environment Variables
-env
 
+
+
+**18. ⚡ Environment Variables**
+**env**
 Purpose: Displays environment variables.
-
 env
 
-printenv
-
+**printenv**
 Purpose: Displays environment variable values.
-
 printenv HOME
 
-export
-
+**export**
 Purpose: Makes a variable available as an environment variable to child processes.
-
 export APP_ENV=production
 
-unset
-
+**unset**
 Purpose: Removes a variable.
-
 unset APP_ENV
 
-set
-
+**set**
 Purpose: Displays shell variables and shell settings.
-
 set
 
-19. 🐚 Bash Built-ins
-echo
 
+
+**19. 🐚 Bash Built-ins**
+**echo**
 Prints text/value to the terminal.
-
 echo "Hello"
 
-read
-
+**read**
 Takes input from the user.
-
 read name
 
-printf
-
+**printf**
 Prints formatted output.
-
 printf "Hello %s\n" "Devi"
 
-source
-
+**source**
 Loads and executes another shell file in the current shell.
-
 source config.sh
 
-alias
-
+**alias**
 Creates a shortcut for a command.
-
 alias ll='ls -la'
 
-unalias
-
+**unalias**
 Removes an alias.
-
 unalias ll
 
-shift
-
+**shift**
 Shifts script arguments one position to the left.
-
 shift
-
 Useful when processing $1, $2, $3, etc.
 eval
 
