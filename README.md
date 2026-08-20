@@ -524,21 +524,17 @@ Example:
 
 command -v nginx
 
-8. 📝 Text Processing
-grep
-
+**8. 📝 Text Processing**
+**grep**
 Searches for text/patterns.
-
 grep "ERROR" app.log
 
-awk
-
+**awk**
 Purpose: Extracts and processes columns/fields from text.
 
 ps -ef | awk '{print $1}'
 
 Important:
-
 $0  → Complete line
 $1  → First column
 $2  → Second column
@@ -546,52 +542,36 @@ $3  → Third column
 NF  → Number of fields
 NR  → Line number
 
-sed
-
-Purpose: Searches, replaces, and modifies text.
-
+**sed**
+     Purpose: Searches, replaces, and modifies text.
 sed 's/old/new/g' file.txt
 
-cut
-
-Purpose: Extracts specific fields/columns.
-
+**cut**
+    Purpose: Extracts specific fields/columns.
 cut -d: -f1 /etc/passwd
-
     -d: → Delimiter :
-
     -f1 → First field
 
-sort
-
-Purpose: Sorts lines.
-
+**sort**
+  Purpose: Sorts lines.
 sort names.txt
 
 Reverse:
-
 sort -r names.txt
 
 Numeric:
-
 sort -n numbers.txt
 
-uniq
-
-Purpose: Removes or counts consecutive duplicate lines.
-
+**uniq**
+    Purpose: Removes or counts consecutive duplicate lines.
 sort names.txt | uniq
 
 Count:
-
 sort names.txt | uniq -c
 
-tr
-
+**tr**
 Full form: Translate
-
 Purpose: Replaces, converts, or deletes characters.
-
 echo "hello" | tr 'a-z' 'A-Z'
 
 Output:
@@ -2430,44 +2410,25 @@ Keeps a process running after logout.
 
 nohup ./app &
 
-46. 🐳 Docker
-docker ps
+**46. 🐳 Docker**
+**docker ps**
+    Lists running containers.---->docker ps
 
-Lists running containers.
 
-docker ps
+**docker ps -a**
+    Lists running and stopped containers.----------->docker ps -a
 
-docker ps -a
+**docker images**
+    Lists local Docker images.----->docker images
 
-Lists running and stopped containers.
+**docker pull**
+    Downloads an image from a registry.---->docker pull nginx
 
-docker ps -a
+**docker push**
+     Uploads an image to a registry.------->docker push username/app:latest
 
-docker images
-
-Lists local Docker images.
-
-docker images
-
-docker pull
-
-Downloads an image from a registry.
-
-docker pull nginx
-
-docker push
-
-Uploads an image to a registry.
-
-docker push username/app:latest
-
-docker build
-
-Builds an image using a Dockerfile.
-
-docker build -t myapp .
-
-docker run
+**docker build**
+    Builds an image using a Dockerfile----------------->docker build -t myapp .
 
 Creates and runs a container.
 
