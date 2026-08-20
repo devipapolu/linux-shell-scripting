@@ -86,114 +86,80 @@ Remember: .. → One level up
 Purpose: Moves two levels up.
 cd ../..
 Example:
-
 /home/btl/project/backend/src
 
 After:
-
 /home/btl/project
 
-cd -
-
+12.**cd -**
 Purpose: Returns to the previously visited directory.
-
 cd -
 
 Example:
-
 /var/log
 
 Then:
-
 cd /home/btl
 cd -
-
 Returns to:
-
 /var/log
-
 Remember: cd - → Previous directory
-cd ~
 
+13.**cd ~**
 Purpose: Moves to the current user's home directory.
-
 For user btl:
-
 ~ = /home/btl
-
 cd ~
 
-cd /
-
+14.**cd /**
 Purpose: Moves to the root directory of the Linux filesystem.
-
 cd /
 
 Root directory:
-
 /
 
-2. Files & Directories
-touch
 
+
+
+**2. Files & Directories**
+**touch**
 Purpose: Creates an empty file.
 
 touch script.sh
-
 Remember: touch → Create file
-mkdir
 
+
+**mkdir**
 Full form: Make Directory
-
 Purpose: Creates a new directory.
-
 mkdir project
 
-mkdir -p
-
+**mkdir -p**
 Purpose: Creates parent directories automatically if they do not already exist.
-
 mkdir -p project/backend/src
-
 If project, backend, and src do not exist, all of them are created.
-
 Remember: -p → Create parent directories
-file
 
+**file**
 Purpose: Identifies the type of a file.
-
 file script.sh
-
 Example:
-
 Bourne-Again shell script
 
-stat
-
+**stat**
 Purpose: Displays detailed file metadata.
-
 stat file.txt
-
 It shows:
-
     Size
-
     Permissions
-
     Owner
-
     Inode
-
     Access time
-
     Modification time
-
     Change time
 
-tree
-
+**tree**
 Purpose: Displays directory structure in tree format.
-
 tree project/
 
 Example:
@@ -204,117 +170,95 @@ project
 └── frontend
     └── package.json
 
-3. View File Contents
-cat
 
+
+    
+
+**3. View File Contents**
+**cat**
 Purpose: Displays file contents.
-
 cat file.txt
 
-tac
-
+**tac**
 Purpose: Displays file contents in reverse line order.
-
 tac file.txt
 
 If cat shows:
-
 line 1
 line 2
 line 3
 
 tac shows:
-
 line 3
 line 2
 line 1
 
 Remember: tac = cat in reverse
-less
 
+**less**
 Purpose: Views large files page by page.
-
 less app.log
-
 Exit:
-
 q
 
-more
-
+**more**
 Purpose: Views large files page by page.
-
 more app.log
-
 less and more are similar, but less is generally more flexible.
-head
 
+**head**
 Purpose: Displays the beginning of a file.
-
 head file.txt
-
 Default: first 10 lines.
-
 head -n 5 file.txt
-
 Displays the first 5 lines.
-tail
 
+**tail**
 Purpose: Displays the last lines of a file.
-
 tail file.txt
-
 Default: last 10 lines.
-tail -f
 
+**tail -f**
 Purpose: Continuously monitors a file as new content is added.
-
 tail -f app.log
-
 Very useful for DevOps log monitoring.
-nl
 
+**nl**
 Purpose: Displays file contents with line numbers.
-
 nl file.txt
 
-wc
-
+**wc**
 Full form: Word Count
-
 Purpose: Counts lines, words, and bytes.
-
 wc file.txt
 
 Important options:
-
 wc -l file.txt
-
 → Number of lines
-
 wc -w file.txt
-
 → Number of words
-
 wc -c file.txt
 
 → Number of bytes
-strings
 
+**strings**
 Purpose: Extracts readable text strings from binary files.
-
 strings app
-
 Useful when inspecting binary files.
-4. Edit Files
-vi
 
+
+
+
+
+
+
+
+**4. Edit Files**
+**vi**
 Purpose: Terminal-based text editor.
-
 vi script.sh
 
 Important modes/commands:
-
 i       → Insert mode
 Esc     → Command mode
 :w      → Save
@@ -322,206 +266,152 @@ Esc     → Command mode
 :wq     → Save and quit
 :q!     → Quit without saving
 
-vim
-
+**vim**
 Purpose: Improved and advanced version of vi.
-
 vim script.sh
-
 Basic commands are similar to vi.
-nano
 
+**nano**
 Purpose: Simple and beginner-friendly terminal text editor.
-
 nano script.sh
 
 Save:
-
 Ctrl + O
 Enter
-
 Exit:
-
 Ctrl + X
 
-5. Copy / Move / Delete
-cp
 
+
+**5. Copy / Move / Delete**
+**cp**
 Full form: Copy
-
 Purpose: Copies files or directories.
-
 cp file.txt backup.txt
-
 Directory:
-
 cp -r project backup/
 
-mv
-
+**mv**
 Full form: Move
-
 Purpose: Moves or renames files/directories.
 
-Move:
-
+Move
 mv file.txt /tmp/
 
 Rename:
-
 mv old.txt new.txt
 
-rm
-
+**rm**
 Full form: Remove
-
 Purpose: Deletes files or directories.
 
 rm file.txt
-
 Directory:
-
 rm -r project
 
 Force:
-
 rm -rf project
-
 ⚠️ Use rm -rf very carefully.
-rmdir
 
+**rmdir**
 Purpose: Deletes an empty directory.
 
 rmdir test
-
 It does not work if the directory contains files.
-6. 🔐 Permissions & Ownership
-chmod
 
+**6. 🔐 Permissions & Ownership**
+**chmod**
 Full form: Change Mode
-
 Purpose: Changes file/directory permissions.
 
 chmod +x script.sh
 
 Then:
-
 ./script.sh
 
 Common permissions:
-
 chmod 755 script.sh
 chmod 644 file.txt
 
-chown
-
+**chown**
 Full form: Change Owner
-
 Purpose: Changes file/directory ownership.
-
 sudo chown btl file.txt
 
 Owner + group:
-
 sudo chown btl:developers file.txt
 
-chgrp
-
+**chgrp**
 Full form: Change Group
-
 Purpose: Changes group ownership.
-
 sudo chgrp developers file.txt
 
-umask
-
+**umask**
 Purpose: Determines default permissions for newly created files and directories.
-
 umask
 
 Set:
-
 umask 022
 
-7. 🔎 Searching
-grep
-
+**7. 🔎 Searching**
+**grep**
 Purpose: Searches for specific text or patterns in files or command output.
-
 grep "error" app.log
 
 Case-insensitive:
-
 grep -i "error" app.log
 
 Recursive:
-
 grep -r "database" .
 
-find
-
+**find**
 Purpose: Searches for files/directories based on name, type, size, time, etc.
-
 find . -name "*.sh"
 
 Only files:
-
 find . -type f
 
 Only directories:
-
 find . -type d
 
-locate
-
+**locate**
 Purpose: Quickly searches for files using a system database.
-
 locate nginx.conf
-
 The database may not contain very recently created files.
-which
 
+
+**which**
 Purpose: Shows where a command executable is located.
-
 which python
 
 Example:
-
 /usr/bin/python
 
-whereis
-
+**whereis**
 Purpose: Searches for a command's binary, source, and manual locations.
-
 whereis nginx
 
-type
+find → files ni search cheyyadaniki
+whereis → command/software related files ekkada unnayo quickly find cheyyadaniki
 
+**type**
 Purpose: Identifies what type of shell command something is.
-
+Important: type is especially useful because it can tell you whether a command is an alias, shell builtin, function, or executable.
 type cd
 type ls
 
 It can identify:
-
     Alias
-
     Built-in
-
     Function
-
     Executable
-
     Command
 
-command -v
-
-Purpose: Checks whether a command exists and shows its location.
-
+**command -v**
+    Purpose: Checks whether a command exists and shows its location.
 command -v python
 
 Example:
-
 command -v nginx
 
 **8. 📝 Text Processing**
@@ -575,64 +465,51 @@ Purpose: Replaces, converts, or deletes characters.
 echo "hello" | tr 'a-z' 'A-Z'
 
 Output:
-
 HELLO
 
-paste
-
+**paste**
 Purpose: Combines lines/files side-by-side as columns.
-
 paste file1.txt file2.txt
 
-join
-
+**join**
 Purpose: Combines two files based on a common field.
-
 join file1 file2
-
 Think of it like a database SQL JOIN.
-split
 
+**split**
 Purpose: Splits a large file into smaller files.
-
 split -l 100 file.txt
 
 Each output file contains 100 lines.
-xargs
 
+**xargs**
 Purpose: Converts input into arguments for another command.
-
 cat files.txt | xargs rm
 
-tee
-
+**tee**
 Purpose: Displays output on the terminal and simultaneously saves it to a file.
-
 ls | tee files.txt
 
-column
-
+**column**
 Purpose: Formats text into aligned columns/table format.
-
 cat data.txt | column -t
 
-rev
-
+**rev**
 Purpose: Reverses characters in each line.
-
 echo "hello" | rev
 
 Output:
-
 olleh
 
-fold
-
+**fold**
 Purpose: Wraps long lines to a specified width.
-
 fold -w 20 file.txt
 
-9. 🔗 Pipes & Redirection
+
+
+
+
+**9. 🔗 Pipes & Redirection**
 | Pipe
 
 Purpose: Sends the output of one command as input to another command.
