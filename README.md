@@ -1,161 +1,201 @@
 
-**🐧 LINUX + SHELL SCRIPTING COMPLETE NOTES**
-**1. Navigation Commands**
-**pwd**
-Purpose: Present Working Directory ni check cheyadaniki / manam ippudu ekkada unnamo telusukovadaniki use chestam.
-pwd
+****🐧 **LINUX + SHELL SCRIPTING COMPLETE NOTES**
+**1. Navigation Commands****
+1.**pwd**:
+     Purpose: Displays the current working directory — where you are currently located. ------> pwd (Remember: pwd → Where am I)                          
 Example:
 /home/btl/go-web-app
-Remember: pwd → Where am I?
 
-**ls**
-Purpose: Current directory lo unna files and directories list ni chudataniki use chestam.
 
-**ls -l**
-Purpose: Files and directories ni detailed information tho list cheyadaniki use chestam.
+2.**ls**
+    Purpose: Lists files and directories in the current directory.---------->ls
+
+
+3.**ls -l**
+       Purpose: Displays files and directories with detailed information.--------->ls -l (Remember: -l → Long/detailed listing)
 It shows:
-permissions
-owner
-group
-size
-modified date/time
-filename
-ls -l
+    Permissions
+    Owner
+    Group
+    Size
+    Modified date/time
+    Filename
 
-Remember: -l → long/detailed listing
 
-**ls -la**
-Purpose: Files ni detailed information tho patu hidden files kuda chudataniki use chestam.
+
+4.**ls -la**
+     Purpose: Displays detailed information, including hidden files.------------->ls -la
+
 ls -la
--l → detailed
--a → all files including hidden files
-Example hidden files:
+    -l → Detailed listing
+    -a → All files, including hidden files
+Examples of hidden files:
 .bashrc
 .git
 .env
 
-**ls -lh**
-Purpose: Files detailed information ni human-readable file sizes tho chudataniki use chestam.
+5.**ls -lh**
+     Purpose: Displays detailed file information with human-readable file sizes.
 ls -lh
-Example:
+Examples:
 10K
 25M
 2G
--l → detailed
--h → human readable
+    -l → Detailed
+    -h → Human-readable
 
-**ls -lt**
-Purpose: Files ni modification time prakaram sort cheyadaniki use chestam.
+6.**ls -lt**
+            Purpose: Sorts files by modification time, with the newest files first.
 ls -lt
-Newest modified file first vastundi.
--l → detailed
--t → time based sorting
+    -l → Detailed
+    -t → Sort by modification time
 
-**ls -ltr**
-Purose: Files ni modification time prakaram reverse order lo list cheyadaniki use chestam.
+
+
+7.**ls -ltr**
+        Purpose: Sorts files by modification time in reverse order.
 ls -ltr
-
 Usually:
 Oldest → Newest
--l → detailed
--t → time sorting
--r → reverse
+    -l → Detailed
+    -t → Time sorting
+    -r → Reverse
 
-**ls -R**
-Purpose: Current directory tho patu subdirectories lopala files/directories kuda recursively list cheyadaniki use chestam.
+8.**ls -R**
+    Purpose: Recursively lists files and directories inside subdirectories.
 ls -R
 Remember: -R → Recursive
 
-**cd**
+9.**cd**
 Full form: Change Directory
-Purpose: Oka directory nunchi another directory ki move avvadaniki use chestam.
+Purpose: Moves from one directory to another.
 cd Documents
 
-**cd ..**
-Purpose: Current directory nunchi one level parent directory ki velladaniki use chestam.
+10.**cd ..**
+Purpose: Moves one level up to the parent directory.
 cd ..
 Example:
 /home/btl/project/backend
+**After:**
 cd ..
+You are in:
 /home/btl/project
-Remember: .. → one level up
+Remember: .. → One level up
 
-**cd ../..**
-Purpose: Current directory nunchi two levels up velladaniki use chestam.
+11**cd ../..**
+Purpose: Moves two levels up.
 cd ../..
 Example:
+
 /home/btl/project/backend/src
 
 After:
+
 /home/btl/project
 
-**cd -**
-Purpose: Manam previously unna previous directory ki return avvadaniki use chestam.
 cd -
+
+Purpose: Returns to the previously visited directory.
+
+cd -
+
 Example:
+
 /var/log
-then:
+
+Then:
+
 cd /home/btl
 cd -
-returns to:
-/var/log
-Remember: cd - → previous directory
 
-**cd ~**
-Purpose: Current user's home directory ki velladaniki use chestam.
-For btl:
-~ = /home/btl
+Returns to:
+
+/var/log
+
+Remember: cd - → Previous directory
 cd ~
 
-**cd /**
-Purpose: Linux filesystem yokka root directory ki velladaniki use chestam.
+Purpose: Moves to the current user's home directory.
+
+For user btl:
+
+~ = /home/btl
+
+cd ~
+
 cd /
+
+Purpose: Moves to the root directory of the Linux filesystem.
+
+cd /
+
 Root directory:
+
 /
 
+2. Files & Directories
+touch
 
+Purpose: Creates an empty file.
 
-
-
-**2. Files & Directories**
-**touch**
-Purpose: Empty file create cheyadaniki use chestam.
 touch script.sh
-Remember: touch → create file
 
-**mkdir**
+Remember: touch → Create file
+mkdir
+
 Full form: Make Directory
-Purpose: New folder/directory create cheyadaniki use chestam.
+
+Purpose: Creates a new directory.
+
 mkdir project
 
-**mkdir -p**
-Purpose: Parent directories avi already lekapoyina nested directories create cheyadaniki use chestam.
-mkdir -p project/backend/src
-project, backend, src lekapoyina automatically create chestundi.
-Remember: -p → parent directories kuda create
+mkdir -p
 
-**file**
-Purpose: File yokka type ni identify cheyadaniki use chestam.
+Purpose: Creates parent directories automatically if they do not already exist.
+
+mkdir -p project/backend/src
+
+If project, backend, and src do not exist, all of them are created.
+
+Remember: -p → Create parent directories
+file
+
+Purpose: Identifies the type of a file.
+
 file script.sh
+
 Example:
+
 Bourne-Again shell script
 
-**stat**
-Purpose: File yokka detailed metadata chudataniki use chestam.
+stat
+
+Purpose: Displays detailed file metadata.
+
 stat file.txt
 
 It shows:
-size
-permissions
-owner
-inode
-access time
-modification time
-change time
 
-**tree**
-Purpose: Directory structure ni tree format lo chudataniki use chestam.
+    Size
+
+    Permissions
+
+    Owner
+
+    Inode
+
+    Access time
+
+    Modification time
+
+    Change time
+
+tree
+
+Purpose: Displays directory structure in tree format.
+
 tree project/
+
 Example:
 
 project
@@ -164,204 +204,263 @@ project
 └── frontend
     └── package.json
 
+3. View File Contents
+cat
 
-    
-**3. View File Contents**
-**cat**
-Purpose: File content ni display/view cheyadaniki use chestam.
+Purpose: Displays file contents.
+
 cat file.txt
 
-**tac**
-Purpose: File content ni reverse line order lo display chestundi.
+tac
+
+Purpose: Displays file contents in reverse line order.
+
 tac file.txt
 
-cat:
+If cat shows:
+
 line 1
 line 2
 line 3
 
-tac:
+tac shows:
+
 line 3
 line 2
 line 1
-Remember: tac = cat reverse
 
-**less**
-Purpose: Large files ni page by page chudataniki use chestam.
+Remember: tac = cat in reverse
+less
+
+Purpose: Views large files page by page.
+
 less app.log
 
 Exit:
+
 q
 
-**more**
-Purpose: Large file content ni page by page chudataniki use chestam.
+more
+
+Purpose: Views large files page by page.
+
 more app.log
-less and more similar, but less generally more flexible.
 
-**head**
-Purpose: File yokka starting lines chudataniki use chestam.
+less and more are similar, but less is generally more flexible.
+head
+
+Purpose: Displays the beginning of a file.
+
 head file.txt
-Default ga first 10 lines.
+
+Default: first 10 lines.
+
 head -n 5 file.txt
-First 5 lines.
 
-**tail**
-Purpose: File yokka last lines chudataniki use chestam.
+Displays the first 5 lines.
+tail
+
+Purpose: Displays the last lines of a file.
+
 tail file.txt
-Last 10 lines.
 
-**tail -f**
-Purpose: File ki new content add avutunte live ga monitor cheyadaniki use chestam.
+Default: last 10 lines.
+tail -f
+
+Purpose: Continuously monitors a file as new content is added.
+
 tail -f app.log
-DevOps lo logs monitoring ki very useful.
 
-**nl**
-Purpose: File lines ki line numbers add chesi display cheyadaniki use chestam.
+Very useful for DevOps log monitoring.
+nl
+
+Purpose: Displays file contents with line numbers.
+
 nl file.txt
 
-**wc**
+wc
+
 Full form: Word Count
-Purpose: File lo lines, words, bytes/characters count cheyadaniki use chestam.
+
+Purpose: Counts lines, words, and bytes.
+
 wc file.txt
 
-**Important:**
+Important options:
+
 wc -l file.txt
-→ number of lines
+
+→ Number of lines
 
 wc -w file.txt
-→ number of words
+
+→ Number of words
 
 wc -c file.txt
-→ bytes
 
-**strings**
-Purpose: Binary file lo readable text strings ni extract cheyadaniki use chestam.
+→ Number of bytes
+strings
+
+Purpose: Extracts readable text strings from binary files.
+
 strings app
+
 Useful when inspecting binary files.
+4. Edit Files
+vi
 
+Purpose: Terminal-based text editor.
 
-
-
-
-**4. Edit Files**
-**vi**
-Purpose: Terminal lo files create/edit cheyadaniki use chestam.
 vi script.sh
 
-**Important modes:**
-i       → insert mode
-Esc     → command mode
-:w      → save
-:q      → quit
-:wq     → save + quit
-:q!     → quit without saving
+Important modes/commands:
 
-**vim**
-Purpose: vi yokka improved/advanced version. Terminal lo files edit cheyadaniki use chestam.
+i       → Insert mode
+Esc     → Command mode
+:w      → Save
+:q      → Quit
+:wq     → Save and quit
+:q!     → Quit without saving
+
+vim
+
+Purpose: Improved and advanced version of vi.
+
 vim script.sh
-Basic commands vi laga untayi.
 
-**nano**
-Purpose: Simple and easy terminal text editor. File create/edit cheyadaniki use chestam.
+Basic commands are similar to vi.
+nano
+
+Purpose: Simple and beginner-friendly terminal text editor.
+
 nano script.sh
 
 Save:
+
 Ctrl + O
 Enter
+
 Exit:
+
 Ctrl + X
 
+5. Copy / Move / Delete
+cp
 
-
-
-**5. Copy / Move / Delete**
-**cp**
 Full form: Copy
-Purpose: File or directory ni copy cheyadaniki use chestam.
+
+Purpose: Copies files or directories.
+
 cp file.txt backup.txt
 
 Directory:
+
 cp -r project backup/
 
-**mv**
+mv
+
 Full form: Move
-Purpose: File/directory ni move or rename cheyadaniki use chestam.
+
+Purpose: Moves or renames files/directories.
 
 Move:
+
 mv file.txt /tmp/
 
 Rename:
+
 mv old.txt new.txt
 
-**rm:**
+rm
+
 Full form: Remove
-Purpose: Files/directories ni delete cheyadaniki use chestam.
+
+Purpose: Deletes files or directories.
+
 rm file.txt
 
 Directory:
+
 rm -r project
 
-**Force:**
+Force:
+
 rm -rf project
-⚠️ rm -rf very carefully use cheyali.
 
-**rmdir**
-Purpose: Empty directory ni delete cheyadaniki use chestam.
+⚠️ Use rm -rf very carefully.
+rmdir
+
+Purpose: Deletes an empty directory.
+
 rmdir test
-Directory empty kakapothe rmdir work avvadu.
 
+It does not work if the directory contains files.
+6. 🔐 Permissions & Ownership
+chmod
 
-
-
-
-**🔐 6. Permissions & Ownership**
-**chmod**
 Full form: Change Mode
-Purpose: File/directory permissions change cheyadaniki use chestam.
+
+Purpose: Changes file/directory permissions.
+
 chmod +x script.sh
 
 Then:
+
 ./script.sh
 
-Common:
+Common permissions:
+
 chmod 755 script.sh
 chmod 644 file.txt
 
-**chown**
+chown
+
 Full form: Change Owner
-Purpose: File/directory owner change cheyadaniki use chestam.
+
+Purpose: Changes file/directory ownership.
+
 sudo chown btl file.txt
+
 Owner + group:
+
 sudo chown btl:developers file.txt
 
+chgrp
 
-**chgrp**
 Full form: Change Group
-Purpose: File/directory yokka group ownership change cheyadaniki use chestam.
+
+Purpose: Changes group ownership.
+
 sudo chgrp developers file.txt
 
-**umask**
-Purpose: New files/directories create ayinappudu default permissions determine cheyadaniki use chestam.
+umask
+
+Purpose: Determines default permissions for newly created files and directories.
+
 umask
 
 Set:
+
 umask 022
 
+7. 🔎 Searching
+grep
 
+Purpose: Searches for specific text or patterns in files or command output.
 
-**🔎 7. Searching**
-**grep**
-Purpose: Files or command output lo specific text/pattern search cheyadaniki use chestam.
 grep "error" app.log
-Case insensitive:
+
+Case-insensitive:
+
 grep -i "error" app.log
 
-**Recursive:**
+Recursive:
+
 grep -r "database" .
 
-**find**
+find
 
-Purpose: Files and directories ni name, type, size, time etc. based on search cheyadaniki use chestam.
+Purpose: Searches for files/directories based on name, type, size, time, etc.
 
 find . -name "*.sh"
 
@@ -372,85 +471,100 @@ find . -type f
 Only directories:
 
 find . -type d
+
 locate
 
-Purpose: System lo files ni quickly search cheyadaniki use chestam.
+Purpose: Quickly searches for files using a system database.
 
 locate nginx.conf
 
-It uses a database, so very recent files sometimes database update avvakapothe kanipinchakapovachu.
-
+The database may not contain very recently created files.
 which
 
-Purpose: Command executable ekkada undho chupistundi.
+Purpose: Shows where a command executable is located.
 
 which python
 
 Example:
 
 /usr/bin/python
+
 whereis
 
-Purpose: Command yokka binary, source, manual locations ni search chestundi.
+Purpose: Searches for a command's binary, source, and manual locations.
 
 whereis nginx
+
 type
 
-Purpose: Command ye type ani identify cheyadaniki use chestam.
+Purpose: Identifies what type of shell command something is.
 
 type cd
 type ls
 
-It can tell you:
+It can identify:
 
-alias
-builtin
-function
-executable
-command
+    Alias
 
-Purpose: Shell lo command ni execute/check cheyadaniki use chestam; aliases/functions ni bypass cheyadaniki kuda useful.
+    Built-in
+
+    Function
+
+    Executable
+
+    Command
+
+command -v
+
+Purpose: Checks whether a command exists and shows its location.
 
 command -v python
 
-Check command existence:
+Example:
 
 command -v nginx
-📝 8. Text Processing
+
+8. 📝 Text Processing
 grep
 
-Purpose: Text/pattern search cheyadaniki.
+Searches for text/patterns.
 
 grep "ERROR" app.log
+
 awk
 
-Purpose: Text lo columns/fields ni extract and process cheyadaniki use chestam.
+Purpose: Extracts and processes columns/fields from text.
 
 ps -ef | awk '{print $1}'
 
 Important:
 
-$0 → complete line
-$1 → first column
-$2 → second column
-$3 → third column
-NF → number of fields
-NR → line number
+$0  → Complete line
+$1  → First column
+$2  → Second column
+$3  → Third column
+NF  → Number of fields
+NR  → Line number
+
 sed
 
-Purpose: Text ni search, replace, modify cheyadaniki use chestam.
+Purpose: Searches, replaces, and modifies text.
 
 sed 's/old/new/g' file.txt
+
 cut
 
-Purpose: Specific column/field ni extract cheyadaniki use chestam.
+Purpose: Extracts specific fields/columns.
 
 cut -d: -f1 /etc/passwd
--d: → delimiter :
--f1 → first field
+
+    -d: → Delimiter :
+
+    -f1 → First field
+
 sort
 
-Purpose: Lines ni sort cheyadaniki use chestam.
+Purpose: Sorts lines.
 
 sort names.txt
 
@@ -461,280 +575,304 @@ sort -r names.txt
 Numeric:
 
 sort -n numbers.txt
+
 uniq
 
-Purpose: Duplicate consecutive lines ni remove/count cheyadaniki use chestam.
+Purpose: Removes or counts consecutive duplicate lines.
 
 sort names.txt | uniq
 
 Count:
 
 sort names.txt | uniq -c
+
 tr
 
 Full form: Translate
 
-Purpose: Characters ni replace/delete/convert cheyadaniki use chestam.
+Purpose: Replaces, converts, or deletes characters.
 
 echo "hello" | tr 'a-z' 'A-Z'
 
 Output:
 
 HELLO
+
 paste
 
-Purpose: Multiple files/lines ni side-by-side columns ga combine cheyadaniki use chestam.
+Purpose: Combines lines/files side-by-side as columns.
 
 paste file1.txt file2.txt
+
 join
 
-Purpose: Two files lo common field based on combine/join cheyadaniki use chestam.
+Purpose: Combines two files based on a common field.
 
 join file1 file2
 
-Database SQL JOIN concept laga think cheyochu.
-
+Think of it like a database SQL JOIN.
 split
 
-Purpose: Large file ni small files ga split cheyadaniki use chestam.
+Purpose: Splits a large file into smaller files.
 
 split -l 100 file.txt
 
-Every output file lo 100 lines.
-
+Each output file contains 100 lines.
 xargs
 
-Purpose: Input ni next command ki arguments ga pass cheyadaniki use chestam.
+Purpose: Converts input into arguments for another command.
 
 cat files.txt | xargs rm
+
 tee
 
-Purpose: Output ni terminal lo display chestu file lo save cheyadaniki use chestam.
+Purpose: Displays output on the terminal and simultaneously saves it to a file.
 
 ls | tee files.txt
+
 column
 
-Purpose: Text output ni proper columns/table format lo display cheyadaniki use chestam.
+Purpose: Formats text into aligned columns/table format.
 
 cat data.txt | column -t
+
 rev
 
-Purpose: Each line characters ni reverse cheyadaniki use chestam.
+Purpose: Reverses characters in each line.
 
 echo "hello" | rev
 
 Output:
 
 olleh
+
 fold
 
-Purpose: Long lines ni specified width ki break/wrap cheyadaniki use chestam.
+Purpose: Wraps long lines to a specified width.
 
 fold -w 20 file.txt
-🔗 9. Pipes & Redirection
-|
 
-Purpose: Oka command yokka output ni next command input ga pass cheyadaniki use chestam.
+9. 🔗 Pipes & Redirection
+| Pipe
+
+Purpose: Sends the output of one command as input to another command.
 
 ps -ef | grep postgres
 
 Flow:
 
 ps -ef
-  ↓
+   ↓
 output
-  ↓
+   ↓
 grep postgres
-  ↓
+   ↓
 filtered output
+
 >
 
-Purpose: Command output ni file lo write/overwrite cheyadaniki.
+Purpose: Writes command output to a file and overwrites existing content.
 
 ls > files.txt
 
-Existing content overwrite avutundi.
-
 >>
 
-Purpose: Output ni file ki append cheyadaniki.
+Purpose: Appends output to a file.
 
 echo "hello" >> file.txt
 
-Existing content delete avvadu.
-
+Existing content is preserved.
 <
 
-Purpose: File content ni command ki input ga provide cheyadaniki.
+Purpose: Provides file content as command input.
 
 sort < names.txt
+
 2>
 
-Purpose: Error output (stderr) ni file ki redirect cheyadaniki.
+Purpose: Redirects standard error (stderr) to a file.
 
 command 2> error.log
+
 2>>
 
-Purpose: Error output ni file ki append cheyadaniki.
+Purpose: Appends standard error to a file.
 
 command 2>> error.log
+
 2>&1
 
-Purpose: stderr ni stdout same location ki redirect cheyadaniki.
+Purpose: Redirects stderr to the same location as stdout.
 
 command > output.log 2>&1
 
-Both normal output + errors:
+Both normal output and errors go to:
 
 output.log
+
 &>
 
-Purpose: Bash lo stdout + stderr rendu same file ki redirect cheyadaniki.
+Purpose: In Bash, redirects both stdout and stderr to the same file.
 
 command &> output.log
-📚 10. Help & Documentation
+
+10. 📚 Help & Documentation
 man
 
-Purpose: Command yokka complete manual/details chudataniki use chestam.
+Purpose: Displays the complete manual for a command.
 
 man chmod
 
 Exit:
 
 q
+
 info
 
-Purpose: Command/software yokka detailed documentation chudataniki.
+Purpose: Displays detailed documentation.
 
 info coreutils
+
 help
 
-Purpose: Bash built-in commands ki help chudataniki.
+Purpose: Shows help for Bash built-in commands.
 
 help cd
+
 whatis
 
-Purpose: Command yokka short description chudataniki.
+Purpose: Shows a short description of a command.
 
 whatis chmod
+
 apropos
 
-Purpose: Specific keyword ki related commands/manual pages ni search cheyadaniki.
+Purpose: Searches manual pages using a keyword.
 
 apropos network
-🕘 11. History
+
+11. 🕘 Command History
 history
 
-Purpose: Manam previously execute chesina commands history chudataniki.
+Purpose: Displays previously executed commands.
 
 history
+
+Last 10 commands:
+
 history 10
-
-Purpose: Last 10 commands chudataniki.
-
-history 10
-!!
-
-Purpose: Previous command ni again execute cheyadaniki.
 
 !!
 
-Example:
+Purpose: Executes the previous command again.
 
 ls
 !!
 
-Second !! again ls execute chestundi.
+The !! executes ls again.
+!100
+
+Purpose: Executes command number 100 from history.
 
 !100
 
-Purpose: History lo command number 100 ni execute cheyadaniki.
-
-!100
-history | grep docker
-
-Purpose: History lo docker related commands search cheyadaniki.
+Search history
 
 history | grep docker
-🖥️ 12. System Information
+
+12. 🖥️ System Information
 uname
 
-Purpose: Operating system/kernel information chudataniki.
+Purpose: Displays operating system/kernel information.
 
 uname -a
-hostname
-
-Purpose: Machine/server yokka hostname chudataniki.
 
 hostname
+
+Purpose: Displays the machine/server hostname.
+
+hostname
+
 hostnamectl
 
-Purpose: Hostname and system information chudataniki/change cheyadaniki.
+Purpose: Displays or changes hostname and system information.
 
 hostnamectl
+
 arch
 
-Purpose: System architecture chudataniki.
+Purpose: Displays system architecture.
 
 arch
 
 Example:
 
 x86_64
-date
-
-Purpose: Current date and time chudataniki.
 
 date
+
+Purpose: Displays current date and time.
+
+date
+
 timedatectl
 
-Purpose: System date, time, timezone and NTP synchronization information chudataniki.
+Purpose: Displays system date, time, timezone, and NTP synchronization information.
 
 timedatectl
-uptime
-
-Purpose: System entha time nunchi running lo undo and system load chudataniki.
 
 uptime
+
+Purpose: Shows how long the system has been running and the system load.
+
+uptime
+
 whoami
 
-Purpose: Current ga manam ye user tho login ayyam ani telusukovadaniki.
+Purpose: Displays the currently logged-in username.
 
 whoami
-id
-
-Purpose: Current user yokka UID, GID and groups chudataniki.
 
 id
+
+Purpose: Displays the current user's UID, GID, and groups.
+
+id
+
 who
 
-Purpose: System lo currently logged-in users chudataniki.
+Purpose: Shows currently logged-in users.
 
 who
-w
-
-Purpose: Logged-in users tho patu what they are doing/system activity chudataniki.
 
 w
+
+Purpose: Shows logged-in users and what they are doing.
+
+w
+
 users
 
-Purpose: Currently logged-in users usernames chudataniki.
+Purpose: Shows usernames of currently logged-in users.
 
 users
-last
-
-Purpose: Previous login history chudataniki.
 
 last
+
+Purpose: Shows previous login history.
+
+last
+
 lastlog
 
-Purpose: Users yokka last login information chudataniki.
+Purpose: Shows the last login information for users.
 
 lastlog
-🧠 13. CPU
+
+13. 🧠 CPU
 nproc
 
-Purpose: Machine lo available CPU processing units number chudataniki.
+Purpose: Shows the number of available CPU processing units.
 
 nproc
 
@@ -742,331 +880,378 @@ Example:
 
 8
 
-Means 8 processing units available.
+Means 8 processing units are available.
+lscpu
+
+Purpose: Displays detailed CPU hardware information.
 
 lscpu
 
-Purpose: CPU yokka complete hardware information chudataniki.
-
-lscpu
 top
 
-Purpose: System health and running processes ni real-time lo monitor cheyadaniki.
+Purpose: Real-time monitoring of system health and running processes.
 
 top
 
 Shows:
 
-CPU usage
-Memory
-Processes
-Load average
+    CPU usage
+
+    Memory
+
+    Processes
+
+    Load average
+
 htop
 
-Purpose: top kanna more interactive and user-friendly process/system monitor.
+Purpose: Interactive and user-friendly process/system monitor.
 
 htop
-vmstat
-
-Purpose: CPU, memory, processes, I/O etc. yokka system performance statistics chudataniki.
 
 vmstat
+
+Purpose: Displays CPU, memory, process, and I/O performance statistics.
+
+vmstat
+
 mpstat
 
-Purpose: CPU usage ni processor/core-wise monitor cheyadaniki.
+Purpose: Monitors CPU usage per processor/core.
 
 mpstat
-🧮 14. Memory
+
+14. 🧮 Memory
 free
 
-Purpose: System lo RAM and swap memory usage chudataniki.
+Purpose: Displays RAM and swap memory usage.
 
 free
-free -h
-
-Purpose: RAM/swap information ni human-readable format lo chudataniki.
 
 free -h
+
+Purpose: Displays memory information in human-readable format.
+
+free -h
+
 vmstat
 
-Purpose: Memory tho patu CPU and system performance statistics chudataniki.
+Monitors memory along with CPU and system performance.
 
 vmstat
-top
-
-Purpose: Running processes memory and CPU usage ni real-time lo chudataniki.
 
 top
+
+Monitors memory and CPU usage of running processes.
+
+top
+
 htop
 
-Purpose: Interactive ga CPU + memory + processes monitor cheyadaniki.
+Interactive CPU, memory, and process monitoring.
 
 htop
-💽 15. Disk / Storage
+
+15. 💽 Disk / Storage
 df
 
-Purpose: Filesystem lo disk space usage chudataniki.
+Purpose: Displays filesystem disk-space usage.
 
 df -h
 
-Remember: df → filesystem disk usage
-
+Remember: df → Filesystem disk usage
 du
 
-Purpose: File/directory entha disk space use chestundo chudataniki.
+Purpose: Shows how much disk space a file/directory uses.
 
 du -sh folder
 
-Remember: du → directory/file usage
+Remember: du → Directory/file usage
+lsblk
+
+Purpose: Lists disks and block devices.
 
 lsblk
 
-Purpose: System lo unna disks and block devices list cheyadaniki.
-
-lsblk
 blkid
 
-Purpose: Block devices yokka UUID, filesystem type etc. chudataniki.
+Purpose: Displays UUID and filesystem information for block devices.
 
 sudo blkid
+
 mount
 
-Purpose: Filesystem/device ni directory ki attach/mount cheyadaniki.
+Purpose: Attaches a filesystem/device to a directory.
 
 sudo mount /dev/sdb1 /mnt
+
 umount
 
-Purpose: Mounted filesystem ni unmount/remove cheyadaniki.
+Purpose: Unmounts a filesystem.
 
 sudo umount /mnt
+
 fdisk
 
-Purpose: Disk partitions ni view/manage cheyadaniki.
+Purpose: Views/manages disk partitions.
 
 sudo fdisk -l
 
-⚠️ Partition changes carefully cheyali.
-
+⚠️ Be careful when modifying partitions.
 parted
 
-Purpose: Disk partitions create/manage cheyadaniki.
+Purpose: Creates/manages disk partitions.
 
 sudo parted -l
-⚙️ 16. Processes
+
+16. ⚙️ Processes
 ps
 
-Purpose: Currently running processes chudataniki.
+Purpose: Displays currently running processes.
 
 ps
-ps -ef
-
-Purpose: All processes ni detailed format lo chudataniki.
 
 ps -ef
+
+Purpose: Displays all processes in detailed format.
+
+ps -ef
+
 ps aux
 
-Purpose: All users/processes yokka detailed process information chudataniki.
+Purpose: Displays detailed process information for all users.
 
 ps aux
+
 pgrep
 
-Purpose: Process name based on PID find cheyadaniki.
+Purpose: Finds process IDs based on process name.
 
 pgrep nginx
+
 pidof
 
-Purpose: Running program yokka PID find cheyadaniki.
+Purpose: Finds the PID of a running program.
 
 pidof nginx
-pstree
-
-Purpose: Processes ni parent-child tree structure lo chudataniki.
 
 pstree
+
+Purpose: Displays processes in a parent-child tree structure.
+
+pstree
+
 kill
 
-Purpose: PID use chesi process ki signal send cheyadaniki.
+Purpose: Sends a signal to a process using its PID.
 
 kill 1234
 
 Force:
 
 kill -9 1234
+
 killall
 
-Purpose: Process name use chesi matching processes ni kill cheyadaniki.
+Purpose: Kills matching processes by name.
 
 killall nginx
+
 pkill
 
-Purpose: Process name/pattern based on processes ki signal send cheyadaniki.
+Purpose: Sends signals to processes based on name/pattern.
 
 pkill nginx
+
 nice
 
-Purpose: New process yokka CPU scheduling priority set cheyadaniki.
+Purpose: Starts a process with a specific CPU scheduling priority.
 
 nice -n 10 ./script.sh
+
 renice
 
-Purpose: Already running process yokka priority change cheyadaniki.
+Purpose: Changes the priority of an already-running process.
 
 renice 10 -p 1234
-🔄 17. Jobs / Background Processes
+
+17. 🔄 Jobs / Background Processes
 jobs
 
-Purpose: Current shell lo running/stopped background jobs chudataniki.
+Purpose: Displays background/stopped jobs in the current shell.
 
 jobs
+
 fg
 
 Full form: Foreground
 
-Purpose: Background job ni foreground ki teesukovadaniki.
+Purpose: Brings a background job to the foreground.
 
 fg %1
+
 bg
 
 Full form: Background
 
-Purpose: Stopped job ni background lo continue cheyadaniki.
+Purpose: Continues a stopped job in the background.
 
 bg %1
+
 nohup
 
-Purpose: Terminal close/logout ayina command ni continue running lo unchadaniki.
+Purpose: Keeps a command running after terminal logout/closure.
 
 nohup ./app.sh &
-wait
-
-Purpose: Background process complete ayye varaku wait cheyadaniki.
 
 wait
+
+Purpose: Waits for background processes to complete.
+
+wait
+
 disown
 
-Purpose: Job ni current shell job table nunchi remove chesi shell logout tarvata kuda continue avvadaniki help chestundi.
+Purpose: Removes a job from the current shell's job table so it can continue after logout.
 
 disown %1
-⚡ 18. Environment Variables
+
+18. ⚡ Environment Variables
 env
 
-Purpose: Environment variables ni display cheyadaniki.
+Purpose: Displays environment variables.
 
 env
+
 printenv
 
-Purpose: Environment variable values chudataniki.
+Purpose: Displays environment variable values.
 
 printenv HOME
+
 export
 
-Purpose: Variable ni environment variable ga child processes ki available cheyadaniki.
+Purpose: Makes a variable available as an environment variable to child processes.
 
 export APP_ENV=production
+
 unset
 
-Purpose: Variable ni remove cheyadaniki.
+Purpose: Removes a variable.
 
 unset APP_ENV
-set
-
-Purpose: Shell variables and shell settings chudataniki/set cheyadaniki.
 
 set
-🐚 19. Bash Built-ins
+
+Purpose: Displays shell variables and shell settings.
+
+set
+
+19. 🐚 Bash Built-ins
 echo
 
-Purpose: Text/value ni terminal lo print cheyadaniki.
+Prints text/value to the terminal.
 
 echo "Hello"
+
 read
 
-Purpose: User nunchi input teesukovadaniki.
+Takes input from the user.
 
 read name
+
 printf
 
-Purpose: Formatted output print cheyadaniki.
+Prints formatted output.
 
 printf "Hello %s\n" "Devi"
+
 source
 
-Purpose: Another shell file ni current shell lo execute/load cheyadaniki.
+Loads and executes another shell file in the current shell.
 
 source config.sh
+
 alias
 
-Purpose: Long command ki shortcut create cheyadaniki.
+Creates a shortcut for a command.
 
 alias ll='ls -la'
+
 unalias
 
-Purpose: Existing alias ni remove cheyadaniki.
+Removes an alias.
 
 unalias ll
-shift
-
-Purpose: Script arguments ni one position left shift cheyadaniki.
 
 shift
 
-Useful when processing many $1, $2, $3 arguments.
+Shifts script arguments one position to the left.
 
+shift
+
+Useful when processing $1, $2, $3, etc.
 eval
 
-Purpose: String ni shell command laga evaluate/execute cheyadaniki.
+Evaluates a string as a shell command.
 
 eval "echo hello"
 
-⚠️ User-controlled input tho eval dangerous avvachu.
-
+⚠️ Avoid using eval with untrusted user input.
 exec
 
-Purpose: Current shell/process ni another command tho replace cheyadaniki.
+Replaces the current shell/process with another command.
 
 exec ./app
+
 exit
 
-Purpose: Script/shell ni exit cheyadaniki.
+Exits a shell/script.
 
 exit 0
+
 return
 
-Purpose: Function nunchi return avvadaniki.
+Returns from a function.
 
 return 0
-break
-
-Purpose: Loop ni completely stop cheyadaniki.
 
 break
+
+Stops a loop completely.
+
+break
+
 continue
 
-Purpose: Current loop iteration ni skip chesi next iteration ki velladaniki.
+Skips the current loop iteration.
 
 continue
-🧩 20. Bash Variables
+
+20. 🧩 Bash Variables
 $0
 
-Purpose: Running script yokka name.
+Purpose: Name/path of the running script.
 
 echo "$0"
+
 $1
 
-Purpose: Script ki pass chesina first argument.
+Purpose: First argument passed to the script.
 
 ./script.sh hello
 
-Inside:
+Inside the script:
 
 echo "$1"
 
 Output:
 
 hello
+
 $2
 
-Purpose: Second argument.
+Second argument.
 
 ./script.sh hello world
 echo "$2"
@@ -1074,93 +1259,100 @@ echo "$2"
 Output:
 
 world
+
 $3
 
-Purpose: Third argument.
-
+Third argument.
 $#
 
-Purpose: Script ki vachina number of arguments.
+Purpose: Number of arguments passed to the script.
 
 echo "$#"
+
 $@
 
-Purpose: Script ki vachina all arguments.
+Purpose: All arguments passed to the script.
 
 echo "$@"
+
 $?
 
-Purpose: Previous command yokka exit status check cheyadaniki.
+Purpose: Exit status of the previous command.
 
 ls
 echo $?
 
 Usually:
 
-0 → success
-non-zero → failure
+0 → Success
+Non-zero → Failure
+
 $$
 
-Purpose: Current shell/script yokka PID.
+Purpose: PID of the current shell/script.
 
 echo "$$"
+
 $!
 
-Purpose: Last background process yokka PID.
+Purpose: PID of the most recently started background process.
 
 ./app &
 echo "$!"
+
 $USER
 
-Purpose: Current username.
+Current username.
 
 echo "$USER"
+
 $HOME
 
-Purpose: Current user's home directory path.
+Current user's home directory.
 
 echo "$HOME"
 
 Example:
 
 /home/btl
+
 $PWD
 
-Purpose: Current working directory path.
+Current working directory.
 
 echo "$PWD"
+
 $PATH
 
-Purpose: Shell commands search chese directories list.
+Directories searched by the shell when executing commands.
 
 echo "$PATH"
-🔀 21. Conditions
+
+21. 🔀 Conditions
 if
 
-Purpose: Condition true/false based on different code execute cheyadaniki.
+Executes code based on a condition.
 
 if [ "$age" -ge 18 ]; then
     echo "Adult"
 fi
+
 then
 
-Purpose: if condition true ayinappudu execute cheyalsina block start chestundi.
-
-if [ "$x" -eq 10 ]; then
-    echo "Ten"
-fi
+Starts the block that executes when the condition is true.
 else
 
-Purpose: if condition false ayinappudu execute chestundi.
+Executes when the if condition is false.
 
 if [ "$x" -eq 10 ]; then
     echo "Ten"
 else
     echo "Not Ten"
 fi
+
 elif
 
-Purpose: Multiple conditions check cheyadaniki.
+Checks additional conditions.
 
 if [ "$x" -gt 10 ]; then
     echo "Greater"
@@ -1169,13 +1361,13 @@ elif [ "$x" -eq 10 ]; then
 else
     echo "Less"
 fi
+
 fi
 
-Purpose: if block ni close chestundi.
-
+Closes an if statement.
 case
 
-Purpose: Multiple possible values/options ni handle cheyadaniki.
+Handles multiple possible values/options.
 
 case "$choice" in
     start)
@@ -1188,176 +1380,140 @@ case "$choice" in
         echo "Invalid"
         ;;
 esac
+
 esac
 
-Purpose: case statement ni close chestundi.
-
+Closes a case statement.
 test
 
-Purpose: Condition true/false check cheyadaniki.
+Checks whether a condition is true or false.
 
 test -f file.txt
 echo $?
+
 [ ]
 
-Purpose: Conditions test cheyadaniki traditional Bash syntax.
+Traditional Bash conditional syntax.
 
 [ "$x" -eq 10 ]
+
 [[ ]]
 
-Purpose: Bash lo advanced and safer conditional testing syntax.
+Advanced Bash conditional syntax.
 
 [[ "$name" == "Devi" ]]
-Comparison Operators
--eq
 
-Numbers equal.
+Comparison Operators
+Operator	Meaning
+-eq	Equal
+-ne	Not equal
+-gt	Greater than
+-ge	Greater than or equal
+-lt	Less than
+-le	Less than or equal
+==	String equality
+=	String equality in [ ]
+!=	Not equal
+
+Examples:
 
 [ "$a" -eq "$b" ]
--ne
-
-Numbers not equal.
-
 [ "$a" -ne "$b" ]
--gt
-
-Greater than.
-
 [ "$a" -gt "$b" ]
--ge
-
-Greater than or equal.
-
 [ "$a" -ge "$b" ]
--lt
-
-Less than.
-
 [ "$a" -lt "$b" ]
--le
-
-Less than or equal.
-
 [ "$a" -le "$b" ]
-==
 
-Strings equal check cheyadaniki commonly use chestam.
+String comparison:
 
 [[ "$name" == "Devi" ]]
-=
 
-String equality in [ ].
-
-[ "$name" = "Devi" ]
-!=
-
-Not equal.
-
-[[ "$name" != "Devi" ]]
 &&
 
-AND — rendu conditions true undali.
+AND — both conditions must succeed.
 
 [ "$age" -ge 18 ] && echo "Adult"
+
 ||
 
-OR — edaina oka condition true unte saripothundi.
+OR — either condition can succeed.
 
 [ "$x" -eq 10 ] || echo "Not 10"
+
 !
 
-Condition ni reverse/not chestundi.
+Negates a condition.
 
 if ! command -v nginx >/dev/null; then
     echo "nginx not installed"
 fi
-File Tests
--f
 
-Regular file exist avtunda check chestundi.
+File Tests
+
+-f → Regular file exists
+-d → Directory exists
+-e → File or directory exists
+-r → Readable
+-w → Writable
+-x → Executable
+-s → File size greater than zero
+
+Examples:
 
 [ -f file.txt ]
--d
-
-Directory exist avtunda check chestundi.
-
 [ -d project ]
--e
-
-File or directory anything exists check chestundi.
-
 [ -e file.txt ]
--r
-
-Readable aa check chestundi.
-
 [ -r file.txt ]
--w
-
-Writable aa check chestundi.
-
 [ -w file.txt ]
--x
-
-Executable aa check chestundi.
-
 [ -x script.sh ]
--s
-
-File empty kaada / size greater than zero aa check chestundi.
-
 [ -s file.txt ]
-🔁 22. Loops
+
+22. 🔁 Loops
 for
 
-Purpose: List/range lo unna values meeda repeated ga commands execute cheyadaniki.
+Repeats commands for a list/range of values.
 
 for i in 1 2 3
 do
     echo "$i"
 done
+
 while
 
-Purpose: Condition true unna varaku repeated ga execute chestundi.
+Runs while a condition is true.
 
 while [ "$count" -lt 5 ]
 do
     echo "$count"
     count=$((count + 1))
 done
+
 until
 
-Purpose: Condition true ayye varaku loop run chestundi.
+Runs until a condition becomes true.
 
 until [ "$count" -ge 5 ]
 do
     echo "$count"
     count=$((count + 1))
 done
+
 do
 
-Loop body start.
-
-for i in 1 2 3
-do
-    echo "$i"
-done
+Starts the loop body.
 done
 
-Loop body end.
-
+Ends the loop body.
 break
 
-Loop ni completely stop chestundi.
-
+Stops the loop completely.
 continue
 
-Current iteration skip chesi next iteration ki vellutundi.
-
-🛠️ 23. Functions
+Skips the current iteration and continues with the next iteration.
+23. 🛠️ Functions
 function
 
-Purpose: Repeatedly use cheyalsina commands ni reusable block ga create cheyadaniki.
+Creates a reusable block of commands.
 
 function greet {
     echo "Hello"
@@ -1368,248 +1524,261 @@ Modern Bash syntax:
 greet() {
     echo "Hello"
 }
+
 return
 
-Purpose: Function nunchi exit avvadaniki and status return cheyadaniki.
+Exits a function and optionally returns a status code.
 
 greet() {
     return 0
 }
-🚨 24. Script Error Handling
+
+24. 🚨 Script Error Handling
 set -e
 
-Purpose: Command failure ayite script ni generally stop cheyadaniki.
+Stops the script when a command fails.
 
 set -e
-set -u
-
-Purpose: Undefined/unset variable use chesthe error ga treat cheyadaniki.
 
 set -u
+
+Treats unset variables as errors.
+
+set -u
+
 set -x
 
-Purpose: Script execute chestunnappudu commands ni trace/debug ga display cheyadaniki.
+Displays commands while the script is executing.
+
+Useful for debugging.
 
 set -x
-set +e
 
-Purpose: set -e behavior ni disable cheyadaniki.
+Disable options
 
 set +e
 set +u
-
-Purpose: set -u behavior ni disable cheyadaniki.
-
-set +u
 set +x
 
-Purpose: Command tracing ni disable cheyadaniki.
-
-set +x
 set -o
 
-Purpose: Shell options ni view/set cheyadaniki.
+View or configure shell options.
 
 set -o
-set -o pipefail
-
-Purpose: Pipeline lo madhyalo command fail ayina failure ni detect cheyadaniki.
 
 set -o pipefail
+
+Detects failures inside pipelines.
+
+set -o pipefail
+
 set -euo pipefail
 
-Purpose: Robust shell scripts lo common safety combination.
+Common robust shell scripting combination:
 
 set -euo pipefail
 
 Meaning:
 
--e → command failure ki exit
--u → unset variable error
-pipefail → pipeline failures detect
+-e → Exit when a command fails
+-u → Error on unset variables
+pipefail → Detect pipeline failures
+
 exit
 
-Purpose: Script ni stop chesi exit status return cheyadaniki.
+Stops the script and returns an exit status.
 
 exit 0
-return
 
-Purpose: Function nunchi return avvadaniki.
-
-⏰ 25. Date / Time
+25. ⏰ Date / Time
 date
 
-Purpose: Current date and time chudataniki.
-
 date
+
+Displays the current date and time.
 timedatectl
 
-Purpose: System time, timezone and NTP synchronization status chudataniki.
-
 timedatectl
+
+Displays system time, timezone, and NTP synchronization.
 cal
 
-Purpose: Calendar chudataniki.
+Displays a calendar.
 
 cal
+
 sleep
 
-Purpose: Script execution ni specified time pause cheyadaniki.
+Pauses script execution.
 
 sleep 5
 
-5 seconds wait chestundi.
-
+Waits 5 seconds.
 time
 
-Purpose: Command execute avvadaniki entha time pattindo measure cheyadaniki.
+Measures how long a command takes.
 
 time ls
-🌐 26. Networking
+
+26. 🌐 Networking
 ip
 
-Purpose: Network interfaces, IP addresses and routes manage/check cheyadaniki.
+Checks/manages network interfaces, IP addresses, and routes.
 
 ip addr
 
 or:
 
 ip a
+
 ping
 
-Purpose: Network connectivity/reachability test cheyadaniki.
+Tests network connectivity/reachability.
 
 ping google.com
+
 ss
 
-Purpose: Open/listening ports and network connections chudataniki.
+Displays listening ports and network connections.
 
 ss -tulpn
+
 netstat
 
-Purpose: Network connections, ports, routing information chudataniki.
+Displays network connections and ports.
 
 netstat -tulpn
 
-Modern Linux lo ss preferred.
-
+Modern Linux systems generally prefer ss.
 traceroute
 
-Purpose: Source nunchi destination varaku packet travel ayye network path/hops chudataniki.
+Shows the network path/hops to a destination.
 
 traceroute google.com
+
 tracepath
 
-Purpose: Network path and MTU information trace cheyadaniki.
+Shows network path and MTU information.
 
 tracepath google.com
+
 arp
 
-Purpose: Local network lo IP-to-MAC address information chudataniki.
+Displays IP-to-MAC information.
 
 arp -a
 
-Modern systems lo ip neigh commonly preferred.
+Modern systems commonly use:
+
+ip neigh
 
 route
 
-Purpose: Routing table view/manage cheyadaniki.
+Displays/manages the routing table.
 
 route -n
 
-Modern systems lo:
+Modern systems:
 
 ip route
 
-preferred.
+hostname
+
+Displays the system hostname.
 
 hostname
 
-Purpose: System hostname chudataniki.
-
-hostname
-🌍 27. DNS
+27. 🌍 DNS
 dig
 
-Purpose: DNS records/query information detailed ga chudataniki.
+Detailed DNS query tool.
 
 dig google.com
+
 nslookup
 
-Purpose: Domain yokka DNS information query cheyadaniki.
+Queries DNS information.
 
 nslookup google.com
+
 host
 
-Purpose: Simple DNS lookup cheyadaniki.
+Simple DNS lookup.
 
 host google.com
+
 resolvectl
 
-Purpose: System DNS resolver information/query cheyadaniki.
+Displays system DNS resolver information.
 
 resolvectl status
-🌐 28. HTTP / Web
+
+28. 🌐 HTTP / Web
 curl
 
-Purpose: URL/server tho communicate cheyadaniki and data transfer cheyadaniki use chestam.
+Purpose: Communicates with URLs/servers and transfers data.
 
 curl https://example.com
 
-API test:
+API testing:
 
 curl http://localhost:8000/api/users
 
 Headers:
 
 curl -I https://example.com
+
 wget
 
-Purpose: Mainly files/resources ni download cheyadaniki use chestam.
+Purpose: Mainly downloads files/resources.
 
 wget https://example.com/file.zip
-🔑 29. SSH / Remote Access
+
+29. 🔑 SSH / Remote Access
 ssh
 
-Purpose: Remote server ki secure ga connect/login avvadaniki.
+Connects securely to a remote server.
 
 ssh user@192.168.1.10
+
 scp
 
 Full form: Secure Copy
 
-Purpose: Local and remote machines madhya files copy cheyadaniki.
+Copies files between local and remote systems.
 
 scp file.txt user@server:/tmp/
+
 sftp
 
 Full form: SSH File Transfer Protocol
 
-Purpose: SSH through secure file transfer cheyadaniki.
+Secure file transfer over SSH.
 
 sftp user@server
+
 ssh-keygen
 
-Purpose: SSH authentication kosam SSH key pair generate cheyadaniki.
+Generates an SSH key pair.
 
 ssh-keygen
 
 Creates:
 
-private key
-public key
+Private key
+Public key
+
 ssh-copy-id
 
-Purpose: Local public SSH key ni remote server's authorized_keys lo copy cheyadaniki.
+Copies your public SSH key to a remote server.
 
 ssh-copy-id user@server
 
-After that passwordless SSH login possible.
-
-📦 30. Compression / Archives
+After this, passwordless SSH login can be configured.
+30. 📦 Compression / Archives
 tar
 
-Purpose: Files/directories ni archive create/extract cheyadaniki.
+Creates/extracts archives.
 
 Create:
 
@@ -1618,288 +1787,301 @@ tar -czf backup.tar.gz project/
 Extract:
 
 tar -xzf backup.tar.gz
+
 gzip
 
-Purpose: File ni gzip format lo compress cheyadaniki.
+Compresses files.
 
 gzip file.txt
+
 gunzip
 
-Purpose: .gz file ni decompress cheyadaniki.
+Decompresses .gz files.
 
 gunzip file.txt.gz
+
 zip
 
-Purpose: ZIP archive create cheyadaniki.
+Creates ZIP archives.
 
 zip backup.zip file.txt
+
 unzip
 
-Purpose: ZIP archive extract cheyadaniki.
+Extracts ZIP archives.
 
 unzip backup.zip
+
 bzip2
 
-Purpose: Files ni bzip2 format lo compress cheyadaniki.
+Compresses using bzip2.
 
 bzip2 file.txt
+
 bunzip2
 
-Purpose: .bz2 files decompress cheyadaniki.
+Decompresses .bz2 files.
 
 bunzip2 file.txt.bz2
+
 xz
 
-Purpose: Files ni xz compression tho compress cheyadaniki.
+Compresses using xz.
 
 xz file.txt
+
 unxz
 
-Purpose: .xz file decompress cheyadaniki.
+Decompresses .xz files.
 
 unxz file.txt.xz
-👤 31. Users
+
+31. 👤 Users
 useradd
 
-Purpose: New user create cheyadaniki.
+Creates a new user.
 
 sudo useradd devuser
+
 adduser
 
-Purpose: New user create cheyadaniki interactive, user-friendly command.
+Interactive/user-friendly user creation.
 
 sudo adduser devuser
+
 usermod
 
-Purpose: Existing user properties modify cheyadaniki.
+Modifies existing user properties.
 
 sudo usermod -aG docker btl
+
 userdel
 
-Purpose: User account delete cheyadaniki.
+Deletes a user.
 
 sudo userdel devuser
-passwd
-
-Purpose: User password set/change cheyadaniki.
 
 passwd
+
+Sets/changes a user password.
+
+passwd
+
 chage
 
-Purpose: User password expiry/aging settings manage cheyadaniki.
+Manages password expiry/aging.
 
 sudo chage -l btl
-👥 32. Groups
+
+32. 👥 Groups
 groupadd
 
-Purpose: New group create cheyadaniki.
+Creates a new group.
 
 sudo groupadd developers
+
 groupmod
 
-Purpose: Existing group properties modify cheyadaniki.
+Modifies an existing group.
 
 sudo groupmod developers
+
 groupdel
 
-Purpose: Group delete cheyadaniki.
+Deletes a group.
 
 sudo groupdel developers
+
 gpasswd
 
-Purpose: Group membership/admin settings manage cheyadaniki.
+Manages group membership/admin settings.
 
 sudo gpasswd -a btl developers
-groups
-
-Purpose: User belong ayina groups chudataniki.
 
 groups
-🔐 33. Security / Authentication
+
+Shows groups a user belongs to.
+
+groups
+
+33. 🔐 Security / Authentication
 sudo
 
-Purpose: Another user, usually root, privileges tho command execute cheyadaniki.
+Runs a command with elevated privileges.
 
 sudo systemctl restart nginx
+
 su
 
 Full form: Switch User
 
-Purpose: Another user account ki switch avvadaniki.
+Switches to another user.
 
 su - user
+
 visudo
 
-Purpose: /etc/sudoers configuration ni safely edit cheyadaniki.
+Safely edits the sudoers configuration.
 
 sudo visudo
 
-Direct ga /etc/sudoers edit cheyadam kanna visudo safer.
-
+visudo is safer than directly editing /etc/sudoers.
 passwd
 
-User password manage cheyadaniki.
+Manages user passwords.
+last
+
+Displays successful login history.
 
 last
 
-Previous successful logins chudataniki.
-
 lastb
 
-Failed login attempts chudataniki.
+Displays failed login attempts.
 
 sudo lastb
+
 who
 
-Currently logged-in users chudataniki.
-
+Displays currently logged-in users.
 w
 
-Logged-in users + activity chudataniki.
-
-📦 34. Ubuntu Package Management
+Displays logged-in users and their activity.
+34. 📦 Ubuntu Package Management
 apt
 
-Purpose: Ubuntu/Debian systems lo packages install/update/remove cheyadaniki.
+Installs, updates, and removes packages.
 
 sudo apt install nginx
+
 apt-get
 
-Purpose: Package management kosam traditional command-line tool.
+Traditional package management tool.
 
 sudo apt-get install nginx
+
 apt-cache
 
-Purpose: Package information/search kosam use chestam.
+Displays/searches package information.
 
 apt-cache policy nginx
+
 dpkg
 
-Purpose: Debian .deb packages install/manage cheyadaniki.
+Manages Debian .deb packages.
 
 dpkg -l
+
+Update package lists
+
 sudo apt update
 
-Purpose: Package repositories nunchi latest package index information download cheyadaniki.
-
-sudo apt update
-sudo apt upgrade
-
-Purpose: Installed packages ni newer versions ki upgrade cheyadaniki.
+Downloads the latest package index information.
+Upgrade packages
 
 sudo apt upgrade
+
+Install
+
 sudo apt install nginx
 
-Purpose: Nginx package install cheyadaniki.
-
-sudo apt install nginx
-sudo apt remove nginx
-
-Purpose: Nginx package remove cheyadaniki.
+Remove
 
 sudo apt remove nginx
 
-Configuration files konni remain avvachu.
+Configuration files may remain.
+Purge
 
 sudo apt purge nginx
 
-Purpose: Package tho patu related configuration files kuda remove cheyadaniki.
-
-sudo apt purge nginx
-apt search nginx
-
-Purpose: Repository lo nginx-related packages search cheyadaniki.
+Removes the package and related configuration files.
+Search
 
 apt search nginx
+
+List installed packages
+
 dpkg -l
 
-Purpose: Installed .deb packages list chudataniki.
-
-dpkg -l
-dpkg -i
-
-Purpose: Local .deb package install cheyadaniki.
+Install local .deb
 
 sudo dpkg -i package.deb
-🔧 35. Services / systemd
+
+35. 🔧 Services / systemd
 systemctl
 
-Purpose: Linux services ni start, stop, restart, enable, disable, status cheyadaniki.
+Manages Linux services.
 
 systemctl status nginx
 
-Purpose: Nginx service running aa/stop aa and recent status chudataniki.
-
-systemctl status nginx
-systemctl start nginx
-
-Purpose: Nginx service start cheyadaniki.
+Start
 
 sudo systemctl start nginx
-systemctl stop nginx
 
-Purpose: Nginx service stop cheyadaniki.
+Stop
 
 sudo systemctl stop nginx
-systemctl restart nginx
 
-Purpose: Nginx service stop + start cheyadaniki.
+Restart
 
 sudo systemctl restart nginx
-systemctl reload nginx
 
-Purpose: Service ni completely stop cheyakunda configuration reload cheyadaniki.
+Reload
+
+Reloads configuration without completely stopping the service.
 
 sudo systemctl reload nginx
-systemctl enable nginx
 
-Purpose: System boot ayinappudu service automatically start avvadaniki enable cheyadaniki.
+Enable
+
+Starts automatically at boot.
 
 sudo systemctl enable nginx
-systemctl disable nginx
 
-Purpose: Boot time automatic start ni disable cheyadaniki.
+Disable
+
+Disables automatic startup.
 
 sudo systemctl disable nginx
-⏰ 36. Scheduling
+
+36. ⏰ Scheduling
 crontab
 
-Purpose: Repeated/scheduled tasks configure cheyadaniki.
+Configures recurring scheduled tasks.
 
 crontab -e
+
 cron
 
-Purpose: Scheduled jobs automatically execute chese background service.
-
+Background service that executes scheduled jobs.
 at
 
-Purpose: Oka command ni specific future time lo once execute cheyadaniki.
+Schedules a command to run once at a future time.
 
 at 15:00
-atq
-
-Purpose: Scheduled at jobs list chudataniki.
 
 atq
+
+Lists scheduled at jobs.
+
+atq
+
 atrm
 
-Purpose: Scheduled at job remove cheyadaniki.
+Removes a scheduled at job.
 
 atrm 3
-crontab -e
-
-Purpose: Cron jobs edit cheyadaniki.
-
-crontab -e
-crontab -l
-
-Purpose: Existing cron jobs list chudataniki.
 
 crontab -l
-📋 37. Logs
+
+Lists existing cron jobs.
+
+crontab -l
+
+37. 📋 Logs
 journalctl
 
-Purpose: systemd services/system logs chudataniki.
+Displays systemd/service logs.
 
 journalctl
 
@@ -1907,219 +2089,250 @@ Specific service:
 
 journalctl -u nginx
 
-Live:
+Live logs:
 
 journalctl -u nginx -f
-dmesg
-
-Purpose: Linux kernel messages chudataniki.
 
 dmesg
+
+Displays Linux kernel messages.
+
+dmesg
+
 logger
 
-Purpose: Custom message ni system log/journal ki send cheyadaniki.
+Sends a custom message to the system log/journal.
 
 logger "Backup completed"
+
 tail
 
-Log file last lines chudataniki.
+Views the last lines of a log file.
 
 tail /var/log/syslog
+
 grep
 
-Log file lo particular error/text search cheyadaniki.
+Searches for specific text in logs.
 
 grep "error" app.log
+
 less
 
-Large log files page-by-page chudataniki.
+Views large log files page by page.
 
 less app.log
+
 tail -f
 
-Live logs monitor cheyadaniki.
+Monitors logs live.
 
 tail -f /var/log/nginx/error.log
-🧪 38. System Diagnostics
+
+38. 🧪 System Diagnostics
 dmesg
 
-Kernel/hardware related messages chudataniki.
-
+Displays kernel/hardware messages.
 lsof
 
 Full form: List Open Files
 
-Purpose: Which process is using a file/port/device ani find cheyadaniki.
+Finds which process is using a file, port, or device.
 
 sudo lsof -i :8080
+
 strace
 
-Purpose: Program system calls ni trace/debug cheyadaniki.
+Traces system calls made by a program.
 
 strace ./app
+
 ltrace
 
-Purpose: Program library calls ni trace cheyadaniki.
+Traces library calls made by a program.
 
 ltrace ./app
+
 vmstat
 
-System performance statistics chudataniki.
+Displays system performance statistics.
+
+vmstat
 
 iostat
 
-Purpose: CPU and disk I/O performance statistics chudataniki.
+Displays CPU and disk I/O statistics.
 
 iostat
-sar
-
-Purpose: Historical/system performance statistics collect/display cheyadaniki.
 
 sar
+
+Collects/displays historical system performance statistics.
+
+sar
+
 free
 
-Memory usage chudataniki.
-
+Displays memory usage.
 df
 
-Disk filesystem usage chudataniki.
-
+Displays filesystem disk usage.
 du
 
-Directory/file disk usage chudataniki.
-
-🔌 39. Ports
+Displays file/directory disk usage.
+39. 🔌 Ports
 ss
 
-Purpose: Listening ports and active network connections chudataniki.
+Displays listening ports and active connections.
 
 ss -tulpn
+
 netstat
 
-Purpose: Network ports/connections chudataniki.
+Displays network ports/connections.
 
 netstat -tulpn
+
 lsof
 
-Specific port ni ye process use chestundo find cheyadaniki.
+Finds which process is using a specific port.
 
 sudo lsof -i :8099
+
 fuser
 
-Purpose: Specific file/port ni ye process use chestundo find cheyadaniki.
+Finds which process is using a port/file.
 
 sudo fuser 8099/tcp
-🌳 40. Filesystem
+
+40. 🌳 Filesystem
 mount
 
-Filesystem/device mount cheyadaniki.
-
+Mounts a filesystem/device.
 umount
 
-Filesystem unmount cheyadaniki.
+Unmounts a filesystem.
+findmnt
+
+Displays mounted filesystems.
 
 findmnt
 
-Purpose: Current system lo mounted filesystems chudataniki.
-
-findmnt
 lsblk
 
-Disks/block devices list cheyadaniki.
+Lists disks/block devices.
+
+lsblk
 
 blkid
 
-Partitions/filesystems UUID and type chudataniki.
+Displays filesystem UUID and type.
+
+blkid
 
 df
 
-Mounted filesystems disk usage chudataniki.
+Displays mounted filesystem disk usage.
+
+df -h
 
 du
 
-Files/directories disk usage chudataniki.
+Displays file/directory disk usage.
 
-🔀 41. Links
+du -sh folder
+
+41. 🔀 Links
 ln
 
-Purpose: File ki link create cheyadaniki.
-
-Hard link:
+Creates a hard link.
 
 ln file.txt link.txt
+
 ln -s
 
-Purpose: Symbolic/soft link create cheyadaniki.
+Creates a symbolic/soft link.
 
 ln -s /var/log/app.log app.log
+
 readlink
 
-Purpose: Symbolic link point ayye actual target chudataniki.
+Displays the target of a symbolic link.
 
 readlink app.log
-📄 42. File Metadata
+
+42. 📄 File Metadata
 stat
 
-Detailed metadata chudataniki.
+Displays detailed metadata.
+
+stat file.txt
 
 file
 
-File type identify cheyadaniki.
+Identifies file type.
+
+file script.sh
 
 basename
 
-Purpose: Full path nunchi filename only extract cheyadaniki.
+Extracts the filename from a full path.
 
 basename /home/btl/test.txt
 
 Output:
 
 test.txt
+
 dirname
 
-Purpose: Full path nunchi directory path extract cheyadaniki.
+Extracts the directory path.
 
 dirname /home/btl/test.txt
 
 Output:
 
 /home/btl
+
 realpath
 
-Purpose: File/directory yokka absolute/canonical path chudataniki.
+Displays the absolute/canonical path.
 
 realpath test.txt
+
 readlink
 
-Symbolic link yokka target path chudataniki.
-
-🧮 43. Calculations / Conversion
+Displays the target of a symbolic link.
+43. 🧮 Calculations / Conversion
 bc
 
-Purpose: Terminal lo mathematical calculations cheyadaniki.
+Performs mathematical calculations.
 
 echo "10 / 2" | bc
 
 Output:
 
 5
+
 expr
 
-Purpose: Basic expressions/calculations/string operations cheyadaniki.
+Performs basic calculations/string operations.
 
 expr 10 + 5
 
 Output:
 
 15
+
 printf
 
-Purpose: Formatted output and basic formatting/calculation support kosam use chestam.
+Provides formatted output.
 
 printf "%d\n" 10
+
 seq
 
-Purpose: Number sequence generate cheyadaniki.
+Generates number sequences.
 
 seq 1 5
 
@@ -2130,570 +2343,656 @@ Output:
 3
 4
 5
-🔤 44. String Processing
+
+44. 🔤 String Processing
 echo
 
-Text print cheyadaniki.
-
+Prints text.
 printf
 
-Formatted text print cheyadaniki.
-
+Prints formatted text.
 tr
 
-Characters translate/delete cheyadaniki.
+Translates/deletes characters.
+
+echo "hello" | tr 'a-z' 'A-Z'
 
 cut
 
-Specific fields/columns extract cheyadaniki.
-
+Extracts specific fields.
 awk
 
-Columns and text process cheyadaniki.
-
+Processes columns/text.
 sed
 
-Text search/replace/modify cheyadaniki.
-
+Searches/replaces/modifies text.
 grep
 
-Text search cheyadaniki.
-
+Searches text.
 rev
 
-String reverse cheyadaniki.
+Reverses strings.
 
 echo "hello" | rev
+
 fold
 
-Long text lines ni specified width ki wrap cheyadaniki.
+Wraps long lines.
 
 fold -w 20 file.txt
-🧵 45. Process Communication
+
+45. 🧵 Process Communication
 kill
 
-Process ki signal send cheyadaniki.
+Sends a signal to a process.
 
 kill 1234
+
 killall
 
-Process name based on processes kill cheyadaniki.
+Kills processes by name.
 
 killall nginx
+
 pkill
 
-Pattern/name based on process signal cheyadaniki.
+Sends signals based on process name/pattern.
 
 pkill nginx
-wait
-
-Background process complete ayye varaku wait cheyadaniki.
 
 wait
+
+Waits for a background process to complete.
+
+wait
+
 jobs
 
-Current shell background jobs chudataniki.
+Displays current shell background jobs.
+
+jobs
 
 fg
 
-Background job ni foreground ki teesukovadaniki.
+Brings a background job to the foreground.
+
+fg %1
 
 bg
 
-Stopped job ni background lo continue cheyadaniki.
+Continues a stopped job in the background.
+
+bg %1
 
 nohup
 
-Terminal close ayina command run lo continue cheyadaniki.
+Keeps a process running after logout.
 
 nohup ./app &
-🐳 46. Docker
+
+46. 🐳 Docker
 docker ps
 
-Purpose: Currently running Docker containers list cheyadaniki.
+Lists running containers.
 
 docker ps
-docker ps -a
-
-Purpose: Running + stopped containers anni chudataniki.
 
 docker ps -a
+
+Lists running and stopped containers.
+
+docker ps -a
+
 docker images
 
-Purpose: Local Docker images list cheyadaniki.
+Lists local Docker images.
 
 docker images
+
 docker pull
 
-Purpose: Docker registry nunchi image download cheyadaniki.
+Downloads an image from a registry.
 
 docker pull nginx
+
 docker push
 
-Purpose: Local image ni registry ki upload cheyadaniki.
+Uploads an image to a registry.
 
 docker push username/app:latest
+
 docker build
 
-Purpose: Dockerfile use chesi image build cheyadaniki.
+Builds an image using a Dockerfile.
 
 docker build -t myapp .
+
 docker run
 
-Purpose: Docker image nunchi container create + run cheyadaniki.
+Creates and runs a container.
 
 docker run -d -p 8080:80 nginx
+
 docker exec
 
-Purpose: Running container lopala command execute cheyadaniki.
+Executes a command inside a running container.
 
 docker exec -it container_name bash
+
 docker logs
 
-Purpose: Container logs chudataniki.
+Displays container logs.
 
 docker logs container_name
 
-Live:
+Live logs:
 
 docker logs -f container_name
+
 docker stop
 
-Purpose: Running container stop cheyadaniki.
+Stops a running container.
 
 docker stop container_name
+
 docker start
 
-Purpose: Stopped container start cheyadaniki.
+Starts a stopped container.
 
 docker start container_name
+
 docker restart
 
-Purpose: Container restart cheyadaniki.
+Restarts a container.
 
 docker restart container_name
+
 docker rm
 
-Purpose: Container remove cheyadaniki.
+Removes a container.
 
 docker rm container_name
+
 docker rmi
 
-Purpose: Docker image remove cheyadaniki.
+Removes a Docker image.
 
 docker rmi nginx
+
 docker inspect
 
-Purpose: Container/image yokka detailed configuration information chudataniki.
+Displays detailed container/image configuration.
 
 docker inspect container_name
-docker stats
-
-Purpose: Containers CPU/memory/network usage ni live monitor cheyadaniki.
 
 docker stats
+
+Displays live container CPU/memory/network usage.
+
+docker stats
+
 docker info
 
-Purpose: Docker installation/system information chudataniki.
+Displays Docker system information.
 
 docker info
-docker version
-
-Purpose: Docker client/server versions chudataniki.
 
 docker version
+
+Displays Docker client/server versions.
+
+docker version
+
 docker network
 
-Purpose: Docker networks create/list/inspect/manage cheyadaniki.
+Manages Docker networks.
 
 docker network ls
+
 docker volume
 
-Purpose: Docker volumes manage cheyadaniki.
+Manages Docker volumes.
 
 docker volume ls
+
 docker system
 
-Purpose: Docker unused resources cleanup/manage cheyadaniki.
+Manages/cleans unused Docker resources.
 
 docker system df
+
+Docker Compose
+
+Start services:
+
 docker compose up
 
-Purpose: docker-compose.yml based on services create/start cheyadaniki.
-
-docker compose up
-docker compose up -d
-
-Purpose: Compose services ni detached/background mode lo start cheyadaniki.
+Detached mode:
 
 docker compose up -d
+
+Stop/remove:
+
 docker compose down
 
-Purpose: Compose containers/network etc. stop/remove cheyadaniki.
-
-docker compose down
-docker compose ps
-
-Purpose: Compose project containers status chudataniki.
+Check status:
 
 docker compose ps
+
+View logs:
+
 docker compose logs
 
-Purpose: Compose services logs chudataniki.
-
-docker compose logs
-docker compose build
-
-Purpose: Compose services images build/rebuild cheyadaniki.
+Build:
 
 docker compose build
+
+Restart:
+
 docker compose restart
 
-Purpose: Compose services restart cheyadaniki.
-
-docker compose restart
-☸️ 47. Kubernetes
+47. ☸️ Kubernetes
 kubectl get
 
-Purpose: Kubernetes resources list/status chudataniki.
+Lists Kubernetes resources.
 
 kubectl get pods
+
 kubectl describe
 
-Purpose: Resource yokka detailed information/events chudataniki.
+Displays detailed resource information and events.
 
 kubectl describe pod mypod
+
 kubectl logs
 
-Purpose: Pod/container application logs chudataniki.
+Displays pod/container logs.
 
 kubectl logs mypod
+
 kubectl exec
 
-Purpose: Running container lopala command execute cheyadaniki.
+Executes a command inside a running container.
 
 kubectl exec -it mypod -- bash
+
 kubectl apply
 
-Purpose: YAML configuration ni Kubernetes cluster ki create/update cheyadaniki.
+Creates/updates resources using YAML.
 
 kubectl apply -f deployment.yaml
+
 kubectl delete
 
-Purpose: Kubernetes resource delete cheyadaniki.
+Deletes a Kubernetes resource.
 
 kubectl delete pod mypod
+
 kubectl edit
 
-Purpose: Existing Kubernetes resource configuration ni directly edit cheyadaniki.
+Directly edits an existing resource.
 
 kubectl edit deployment myapp
+
 kubectl scale
 
-Purpose: Deployment/ReplicaSet replicas number change cheyadaniki.
+Changes the number of replicas.
 
 kubectl scale deployment myapp --replicas=3
+
 kubectl rollout
 
-Purpose: Deployment rollout status/history/undo etc. manage cheyadaniki.
+Manages deployment rollout status/history/rollback.
 
 kubectl rollout status deployment/myapp
+
 kubectl port-forward
 
-Purpose: Local machine port ni Kubernetes pod/service port ki forward cheyadaniki.
+Forwards a local port to a Kubernetes pod/service.
 
 kubectl port-forward pod/mypod 8080:80
+
 kubectl expose
 
-Purpose: Existing resource ni Kubernetes Service ga expose cheyadaniki.
+Exposes an existing resource as a Kubernetes Service.
 
 kubectl expose deployment myapp --port=80
+
 kubectl create
 
-Purpose: Kubernetes resources create cheyadaniki.
+Creates Kubernetes resources.
 
 kubectl create deployment myapp --image=nginx
+
 kubectl config
 
-Purpose: Kubernetes cluster/context/user configuration manage cheyadaniki.
+Manages Kubernetes contexts and configuration.
 
 kubectl config get-contexts
-Common Kubernetes commands
+
+Common commands:
+
 kubectl get pods
-
-→ Pods list
-
 kubectl get nodes
-
-→ Nodes list
-
 kubectl get services
-
-→ Services list
-
 kubectl get deployments
 
-→ Deployments list
-
-🌿 48. Git
+48. 🌿 Git
 git init
 
-Purpose: Current directory ni Git repository ga initialize cheyadaniki.
+Initializes the current directory as a Git repository.
 
 git init
+
 git clone
 
-Purpose: Remote repository ni local machine ki copy cheyadaniki.
+Copies a remote repository to the local machine.
 
 git clone https://github.com/user/repo.git
-git status
-
-Purpose: Working directory and staging area current status chudataniki.
 
 git status
+
+Displays the current working tree and staging area status.
+
+git status
+
 git add
 
-Purpose: Changes ni staging area ki add cheyadaniki.
+Adds changes to the staging area.
 
 git add file.txt
 
-All:
+All files:
 
 git add .
+
 git commit
 
-Purpose: Staged changes ni Git history lo save cheyadaniki.
+Saves staged changes to Git history.
 
 git commit -m "Added login feature"
-git push
-
-Purpose: Local commits ni remote repository ki upload cheyadaniki.
 
 git push
+
+Uploads local commits to a remote repository.
+
+git push
+
 git pull
 
-Purpose: Remote changes ni fetch + integrate cheyadaniki.
+Fetches and integrates changes from a remote repository.
 
 git pull
-git fetch
-
-Purpose: Remote changes ni download chestundi but current branch lo automatically merge cheyadu.
 
 git fetch
+
+Downloads remote changes without automatically merging them.
+
+git fetch
+
 git merge
 
-Purpose: One branch changes ni another branch lo merge cheyadaniki.
+Combines one branch into another.
 
 git merge feature
+
 git rebase
 
-Purpose: Current branch commits ni another base ki reapply/rewrite cheyadaniki.
+Reapplies commits on top of another base.
 
 git rebase main
+
 git branch
 
-Purpose: Branches list/create/delete cheyadaniki.
+Lists, creates, or deletes branches.
 
 git branch
 
 Create:
 
 git branch feature
+
 git switch
 
-Purpose: Branch switch/create cheyadaniki.
+Switches or creates branches.
 
 git switch feature
+
 git checkout
 
-Purpose: Older Git command; branches switch cheyadaniki and files/commits restore cheyadaniki use chestaru.
+Older Git command used for switching branches and restoring files/commits.
 
 git checkout main
-git log
-
-Purpose: Commit history chudataniki.
 
 git log
+
+Displays commit history.
+
+git log
+
 git diff
 
-Purpose: Changes/differences chudataniki.
+Displays differences between changes.
 
 git diff
-git stash
-
-Purpose: Current uncommitted changes ni temporary ga stash cheyadaniki.
 
 git stash
+
+Temporarily stores uncommitted changes.
+
+git stash
+
 git tag
 
-Purpose: Specific commit ki version/release marker create cheyadaniki.
+Creates a version/release marker.
 
 git tag v1.0
+
 git remote
 
-Purpose: Remote repositories information manage/check cheyadaniki.
+Manages/checks remote repositories.
 
 git remote -v
-git reset
-
-Purpose: HEAD/staging/working tree ni different state ki move cheyadaniki.
 
 git reset
 
-⚠️ --hard carefully use cheyali.
+Moves HEAD and/or staging/working tree to another state.
 
+git reset
+
+⚠️ Use --hard carefully because it can remove uncommitted changes.
 git revert
 
-Purpose: Previous commit changes ni reverse chese new commit create cheyadaniki.
+Creates a new commit that reverses an earlier commit.
 
 git revert <commit>
+
 git cherry-pick
 
-Purpose: Specific commit ni current branch ki apply cheyadaniki.
+Applies a specific commit to the current branch.
 
 git cherry-pick <commit>
-🔨 49. Build / Development
+
+49. 🔨 Build / Development
 make
 
-Purpose: Makefile based on source code build/automation cheyadaniki.
+Builds/automates projects using a Makefile.
 
 make
+
 gcc
 
-Purpose: C programs compile cheyadaniki.
+Compiles C programs.
 
 gcc main.c -o main
+
 g++
 
-Purpose: C++ programs compile cheyadaniki.
+Compiles C++ programs.
 
 g++ main.cpp -o app
+
 python
 
-Purpose: Python interpreter run cheyadaniki.
+Runs Python programs.
 
 python script.py
+
 python3
 
-Purpose: Python 3 interpreter run cheyadaniki.
+Runs Python 3 programs.
 
 python3 script.py
+
 pip
 
-Purpose: Python packages install/manage cheyadaniki.
+Installs/manages Python packages.
 
 pip install requests
+
 npm
 
-Purpose: Node.js packages and scripts manage cheyadaniki.
+Manages Node.js packages and scripts.
 
 npm install
+
 node
 
-Purpose: JavaScript/Node.js programs execute cheyadaniki.
+Runs Node.js applications.
 
 node app.js
+
 go
 
-Purpose: Go programs build/run/manage cheyadaniki.
+Builds/runs/manages Go programs.
 
 go run main.go
+
 java
 
-Purpose: Java applications run cheyadaniki.
+Runs Java applications.
 
 java Main
+
 javac
 
-Purpose: Java source code compile cheyadaniki.
+Compiles Java source code.
 
 javac Main.java
-📊 50. Monitoring
+
+50. 📊 Monitoring
 top
 
 Real-time CPU/process monitoring.
+
+top
 
 htop
 
 Interactive process monitoring.
 
+htop
+
 free
 
 RAM usage monitoring.
 
+free -h
+
 df
 
-Disk filesystem usage monitoring.
+Filesystem disk usage.
+
+df -h
 
 du
 
 Directory/file size monitoring.
 
+du -sh folder
+
 iostat
 
-CPU + disk I/O performance monitoring.
+CPU and disk I/O monitoring.
+
+iostat
 
 vmstat
 
-CPU/memory/process/system statistics monitoring.
+CPU/memory/process/system statistics.
+
+vmstat
 
 sar
 
-System performance statistics/history monitoring.
+System performance statistics/history.
+
+sar
 
 uptime
 
-System uptime and load monitoring.
+System uptime and load.
+
+uptime
 
 watch
 
-Purpose: Oka command ni repeatedly execute chesi output ni continuously monitor cheyadaniki.
+Repeatedly executes a command and refreshes its output.
 
 watch df -h
 
-Every few seconds refresh chestundi.
-
-🧰 51. Miscellaneous Useful Commands
+51. 🧰 Miscellaneous Useful Commands
 clear
 
-Purpose: Terminal screen ni clear cheyadaniki.
+Clears the terminal screen.
 
 clear
-reset
-
-Purpose: Terminal display/state problem ayinappudu terminal ni reset cheyadaniki.
 
 reset
+
+Resets the terminal when its display/state becomes corrupted.
+
+reset
+
 history
 
-Previous commands chudataniki.
+Displays previous commands.
+
+history
 
 alias
 
-Command shortcut create cheyadaniki.
+Creates command shortcuts.
 
 alias ll='ls -la'
+
 unalias
 
-Alias remove cheyadaniki.
+Removes an alias.
 
 unalias ll
+
 echo
 
-Text/value print cheyadaniki.
+Prints text/values.
+
+echo "Hello"
 
 printf
 
-Formatted output print cheyadaniki.
+Prints formatted output.
+
+printf "Hello %s\n" "Devi"
 
 sleep
 
-Execution ni specified time pause cheyadaniki.
+Pauses execution.
 
 sleep 10
+
 true
 
-Purpose: Always successful exit status return chestundi.
+Always returns a successful exit status.
 
 true
 echo $?
@@ -2701,9 +3000,10 @@ echo $?
 Output:
 
 0
+
 false
 
-Purpose: Always failure/non-zero exit status return chestundi.
+Always returns a failure/non-zero exit status.
 
 false
 echo $?
@@ -2712,11 +3012,10 @@ Output:
 
 1
 
-Shell scripting lo testing/error handling kosam useful.
-
+Useful for shell scripting tests and error handling.
 yes
 
-Purpose: Repeated ga y or specified text print chestundi.
+Continuously prints y or specified text.
 
 yes
 
@@ -2728,53 +3027,42 @@ Example:
 
 yes hello
 
-⚠️ Output continuously vastundi, so careful.
-
+⚠️ It continuously generates output, so use it carefully.
 seq
 
-Purpose: Number sequence generate cheyadaniki.
+Generates number sequences.
 
 seq 1 10
 
-Output:
-
-1
-2
-3
-...
-10
 watch
 
-Purpose: Command ni repeatedly run chesi live output monitor cheyadaniki.
+Repeatedly runs a command and displays live output.
 
 watch ls
+
 timeout
 
-Purpose: Command ni specified time varaku run chesi time exceed ayite stop cheyadaniki.
+Runs a command for a specified amount of time and stops it when the time expires.
 
 timeout 10s ping google.com
+
 which
 
-Purpose: Command executable location chudataniki.
+Shows the executable location.
 
 which python
+
 whereis
 
-Purpose: Command binary/source/manual locations search cheyadaniki.
+Searches for binary/source/manual locations.
 
 whereis python
-type
 
-Purpose: Command alias/builtin/function/executable aa ani identify cheyadaniki.
+**type**
+Identifies whether a command is an alias, builtin, function, or executable.
 
 type cd
+
 command
 
-Purpose: Shell command ni directly execute/check cheyadaniki.
-
-command -v python
-⭐ MOST IMPORTANT SHELL SCRIPTING CONCEPTS
-
-Nuvvu Shell Scripting nerchukuntunnav kabatti, ee commands anni okesari memorize cheyyalsina avasaram ledu.
-
-First ee order lo nerchuko:
+Checks or executes commands directly.
