@@ -2677,143 +2677,98 @@ kubectl get nodes
 kubectl get services
 kubectl get deployments
 
-48. 🌿 Git
-git init
-
+**48. 🌿 Git**
+**git init**
 Initializes the current directory as a Git repository.
 
-git init
-
-git clone
-
+**git clone**
 Copies a remote repository to the local machine.
 
-git clone https://github.com/user/repo.git
+"git clone https://github.com/user/repo.git"
 
-git status
-
+**git status**
 Displays the current working tree and staging area status.
-
 git status
 
-git add
-
+**git add**
 Adds changes to the staging area.
-
 git add file.txt
 
 All files:
-
 git add .
 
-git commit
-
+**git commit**
 Saves staged changes to Git history.
-
 git commit -m "Added login feature"
 
-git push
-
+**git push**
 Uploads local commits to a remote repository.
-
 git push
 
-git pull
-
+**git pull**
 Fetches and integrates changes from a remote repository.
-
 git pull
 
-git fetch
-
+**git fetch**
 Downloads remote changes without automatically merging them.
-
 git fetch
 
-git merge
-
+**git merge**
 Combines one branch into another.
-
 git merge feature
 
-git rebase
-
+**git rebase**
 Reapplies commits on top of another base.
-
 git rebase main
 
-git branch
-
+**git branch**
 Lists, creates, or deletes branches.
-
 git branch
-
 Create:
-
 git branch feature
 
-git switch
-
+**git switch**
 Switches or creates branches.
-
 git switch feature
 
-git checkout
-
+**git checkout**
 Older Git command used for switching branches and restoring files/commits.
-
 git checkout main
 
-git log
-
+**git log**
 Displays commit history.
-
 git log
 
-git diff
-
+**git diff**
 Displays differences between changes.
-
 git diff
 
-git stash
-
+**git stash**
 Temporarily stores uncommitted changes.
-
 git stash
 
-git tag
-
+**git tag**
 Creates a version/release marker.
-
 git tag v1.0
 
-git remote
-
+**git remote**
 Manages/checks remote repositories.
-
 git remote -v
 
-git reset
-
+**git reset**
 Moves HEAD and/or staging/working tree to another state.
-
 git reset
-
 ⚠️ Use --hard carefully because it can remove uncommitted changes.
-git revert
 
+**git revert**
 Creates a new commit that reverses an earlier commit.
-
 git revert <commit>
 
-git cherry-pick
-
+**git cherry-pick**
 Applies a specific commit to the current branch.
-
 git cherry-pick <commit>
 
-49. 🔨 Build / Development
+49.** 🔨 Build / Development**
 make
 
 Builds/automates projects using a Makefile.
@@ -2941,75 +2896,59 @@ Repeatedly executes a command and refreshes its output.
 
 watch df -h
 
-51. 🧰 Miscellaneous Useful Commands
-clear
+**51. 🧰 Miscellaneous Useful Commands**
 
-Clears the terminal screen.
+***clear**
+Clears the terminal screen.----->clear
 
-clear
 
-reset
+**reset**
+Resets the terminal when its display/state becomes corrupted.---->reset
 
-Resets the terminal when its display/state becomes corrupted.
 
-reset
 
-history
+**history**
+Displays previous commands.------>history
 
-Displays previous commands.
 
-history
 
-alias
+**alias**
+Creates command shortcuts.------>alias ll='ls -la'
 
-Creates command shortcuts.
 
-alias ll='ls -la'
 
-unalias
+**unalias**
+Removes an alias.--->unalias ll
 
-Removes an alias.
 
-unalias ll
 
-echo
+**echo**
+Prints text/values.---->echo "Hello"
 
-Prints text/values.
 
-echo "Hello"
 
-printf
+**printf**
+Prints formatted output.----->printf "Hello %s\n" "Devi"
 
-Prints formatted output.
+**sleep**
+Pauses execution.----->sleep 10
 
-printf "Hello %s\n" "Devi"
 
-sleep
 
-Pauses execution.
-
-sleep 10
-
-true
-
+**true**
 Always returns a successful exit status.
 
 true
 echo $?
-
 Output:
-
 0
 
-false
-
+**false**
 Always returns a failure/non-zero exit status.
 
 false
 echo $?
-
 Output:
-
 1
 
 Useful for shell scripting tests and error handling.
